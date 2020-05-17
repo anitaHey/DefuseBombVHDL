@@ -1,0 +1,88 @@
+|key_to_seg7
+A <= num_out[6].DB_MAX_OUTPUT_PORT_TYPE
+DE1_in => keyboard:inst1.num_in[5]
+DE2_in => keyboard:inst1.num_in[4]
+DE3_in => keyboard:inst1.num_in[3]
+RK1 => keyboard:inst1.num_in[2]
+RK2 => keyboard:inst1.num_in[1]
+RK3 => keyboard:inst1.num_in[0]
+B <= num_out[5].DB_MAX_OUTPUT_PORT_TYPE
+C <= num_out[4].DB_MAX_OUTPUT_PORT_TYPE
+D <= num_out[3].DB_MAX_OUTPUT_PORT_TYPE
+E <= num_out[2].DB_MAX_OUTPUT_PORT_TYPE
+F <= num_out[1].DB_MAX_OUTPUT_PORT_TYPE
+G <= num_out[0].DB_MAX_OUTPUT_PORT_TYPE
+DE1_out <= <GND>
+DE2_out <= <GND>
+DE3_out <= <GND>
+
+
+|key_to_seg7|seg7:inst
+num_in[0] => Mux0.IN19
+num_in[0] => Mux1.IN19
+num_in[0] => Mux2.IN19
+num_in[0] => Mux3.IN19
+num_in[0] => Mux4.IN19
+num_in[0] => Mux5.IN19
+num_in[0] => Mux6.IN19
+num_in[1] => Mux0.IN18
+num_in[1] => Mux1.IN18
+num_in[1] => Mux2.IN18
+num_in[1] => Mux3.IN18
+num_in[1] => Mux4.IN18
+num_in[1] => Mux5.IN18
+num_in[1] => Mux6.IN18
+num_in[2] => Mux0.IN17
+num_in[2] => Mux1.IN17
+num_in[2] => Mux2.IN17
+num_in[2] => Mux3.IN17
+num_in[2] => Mux4.IN17
+num_in[2] => Mux5.IN17
+num_in[2] => Mux6.IN17
+num_in[3] => Mux0.IN16
+num_in[3] => Mux1.IN16
+num_in[3] => Mux2.IN16
+num_in[3] => Mux3.IN16
+num_in[3] => Mux4.IN16
+num_in[3] => Mux5.IN16
+num_in[3] => Mux6.IN16
+num_out[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+num_out[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+num_out[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+num_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+num_out[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+num_out[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+num_out[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|key_to_seg7|keyboard:inst1
+num_in[0] => Mux0.IN69
+num_in[0] => Mux1.IN69
+num_in[0] => Mux2.IN69
+num_in[0] => Mux3.IN69
+num_in[1] => Mux0.IN68
+num_in[1] => Mux1.IN68
+num_in[1] => Mux2.IN68
+num_in[1] => Mux3.IN68
+num_in[2] => Mux0.IN67
+num_in[2] => Mux1.IN67
+num_in[2] => Mux2.IN67
+num_in[2] => Mux3.IN67
+num_in[3] => Mux0.IN66
+num_in[3] => Mux1.IN66
+num_in[3] => Mux2.IN66
+num_in[3] => Mux3.IN66
+num_in[4] => Mux0.IN65
+num_in[4] => Mux1.IN65
+num_in[4] => Mux2.IN65
+num_in[4] => Mux3.IN65
+num_in[5] => Mux0.IN64
+num_in[5] => Mux1.IN64
+num_in[5] => Mux2.IN64
+num_in[5] => Mux3.IN64
+num_out[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+num_out[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+num_out[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+num_out[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
