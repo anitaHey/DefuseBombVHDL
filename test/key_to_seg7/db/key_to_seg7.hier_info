@@ -1,8 +1,5 @@
 |key_to_seg7
 A <= num_out[6].DB_MAX_OUTPUT_PORT_TYPE
-DE1_in => keyboard:inst1.num_in[5]
-DE2_in => keyboard:inst1.num_in[4]
-DE3_in => keyboard:inst1.num_in[3]
 RK1 => keyboard:inst1.num_in[2]
 RK2 => keyboard:inst1.num_in[1]
 RK3 => keyboard:inst1.num_in[0]
