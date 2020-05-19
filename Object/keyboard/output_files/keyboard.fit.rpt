@@ -1,5 +1,5 @@
 Fitter report for keyboard
-Sun May 17 23:16:46 2020
+Tue May 19 20:21:01 2020
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +---------------------------------+--------------------------------------------+
-; Fitter Status                   ; Successful - Sun May 17 23:16:46 2020      ;
+; Fitter Status                   ; Successful - Tue May 19 20:21:01 2020      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; keyboard                                   ;
 ; Top-level Entity Name           ; keyboard                                   ;
@@ -155,12 +155,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; num_out[1] ; Incomplete set of assignments ;
 ; num_out[2] ; Incomplete set of assignments ;
 ; num_out[3] ; Incomplete set of assignments ;
-; num_in[1]  ; Incomplete set of assignments ;
-; num_in[3]  ; Incomplete set of assignments ;
-; num_in[5]  ; Incomplete set of assignments ;
-; num_in[0]  ; Incomplete set of assignments ;
-; num_in[2]  ; Incomplete set of assignments ;
-; num_in[4]  ; Incomplete set of assignments ;
+; Row[0]     ; Incomplete set of assignments ;
+; Row[2]     ; Incomplete set of assignments ;
+; Column[1]  ; Incomplete set of assignments ;
+; Column[0]  ; Incomplete set of assignments ;
+; Column[2]  ; Incomplete set of assignments ;
+; Row[1]     ; Incomplete set of assignments ;
 +------------+-------------------------------+
 
 
@@ -232,8 +232,8 @@ The pin-out file can be found in D:/Desktop/Project/DefuseBombVHDL/Object/keyboa
 ;                                                             ;               ;       ;
 ; Combinational ALUT usage for logic                          ; 5             ;       ;
 ;     -- 7 input functions                                    ; 0             ;       ;
-;     -- 6 input functions                                    ; 4             ;       ;
-;     -- 5 input functions                                    ; 0             ;       ;
+;     -- 6 input functions                                    ; 3             ;       ;
+;     -- 5 input functions                                    ; 1             ;       ;
 ;     -- 4 input functions                                    ; 0             ;       ;
 ;     -- <=3 input functions                                  ; 1             ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0             ;       ;
@@ -278,8 +278,8 @@ The pin-out file can be found in D:/Desktop/Project/DefuseBombVHDL/Object/keyboa
 ; Peak interconnect usage (total/H/V)                         ; 0% / 0% / 0%  ;       ;
 ; Maximum fan-out                                             ; 4             ;       ;
 ; Highest non-global fan-out                                  ; 4             ;       ;
-; Total fan-out                                               ; 38            ;       ;
-; Average fan-out                                             ; 1.52          ;       ;
+; Total fan-out                                               ; 37            ;       ;
+; Average fan-out                                             ; 1.48          ;       ;
 +-------------------------------------------------------------+---------------+-------+
 
 
@@ -310,8 +310,8 @@ The pin-out file can be found in D:/Desktop/Project/DefuseBombVHDL/Object/keyboa
 ;                                                             ;                     ;                                ;
 ; Combinational ALUT usage for logic                          ; 5                   ; 0                              ;
 ;     -- 7 input functions                                    ; 0                   ; 0                              ;
-;     -- 6 input functions                                    ; 4                   ; 0                              ;
-;     -- 5 input functions                                    ; 0                   ; 0                              ;
+;     -- 6 input functions                                    ; 3                   ; 0                              ;
+;     -- 5 input functions                                    ; 1                   ; 0                              ;
 ;     -- 4 input functions                                    ; 0                   ; 0                              ;
 ;     -- <=3 input functions                                  ; 1                   ; 0                              ;
 ; Combinational ALUT usage for route-throughs                 ; 0                   ; 0                              ;
@@ -341,7 +341,7 @@ The pin-out file can be found in D:/Desktop/Project/DefuseBombVHDL/Object/keyboa
 ;     -- Registered Output Connections                        ; 0                   ; 0                              ;
 ;                                                             ;                     ;                                ;
 ; Internal Connections                                        ;                     ;                                ;
-;     -- Total Connections                                    ; 38                  ; 0                              ;
+;     -- Total Connections                                    ; 37                  ; 0                              ;
 ;     -- Registered Connections                               ; 0                   ; 0                              ;
 ;                                                             ;                     ;                                ;
 ; External Connections                                        ;                     ;                                ;
@@ -374,12 +374,12 @@ The pin-out file can be found in D:/Desktop/Project/DefuseBombVHDL/Object/keyboa
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+
 ; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+
-; num_in[0] ; G16   ; 7A       ; 70           ; 81           ; 51           ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; num_in[1] ; B15   ; 7A       ; 62           ; 81           ; 17           ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; num_in[2] ; E15   ; 7A       ; 66           ; 81           ; 40           ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; num_in[3] ; A14   ; 7A       ; 66           ; 81           ; 91           ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; num_in[4] ; E16   ; 7A       ; 70           ; 81           ; 17           ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
-; num_in[5] ; H16   ; 7A       ; 64           ; 81           ; 0            ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; Column[0] ; G16   ; 7A       ; 70           ; 81           ; 51           ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; Column[1] ; H16   ; 7A       ; 64           ; 81           ; 0            ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; Column[2] ; E15   ; 7A       ; 66           ; 81           ; 40           ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; Row[0]    ; B15   ; 7A       ; 62           ; 81           ; 17           ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; Row[1]    ; E16   ; 7A       ; 70           ; 81           ; 17           ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
+; Row[2]    ; A14   ; 7A       ; 66           ; 81           ; 91           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+
 
 
@@ -431,7 +431,7 @@ The pin-out file can be found in D:/Desktop/Project/DefuseBombVHDL/Object/keyboa
 ; A11      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; A12      ; 444        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A13      ; 432        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; A14      ; 420        ; 7A       ; num_in[3]                       ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; A14      ; 420        ; 7A       ; Row[2]                          ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; A15      ; 418        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A16      ;            ; 7A       ; VCCIO7A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; A17      ; 403        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -498,7 +498,7 @@ The pin-out file can be found in D:/Desktop/Project/DefuseBombVHDL/Object/keyboa
 ; B12      ; 442        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; B13      ; 430        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; B14      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; B15      ; 427        ; 7A       ; num_in[1]                       ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; B15      ; 427        ; 7A       ; Row[0]                          ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; B16      ; 406        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; B17      ; 384        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; B18      ; 382        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -564,8 +564,8 @@ The pin-out file can be found in D:/Desktop/Project/DefuseBombVHDL/Object/keyboa
 ; E12      ; 451        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E13      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; E14      ; 433        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; E15      ; 417        ; 7A       ; num_in[2]                       ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; E16      ; 411        ; 7A       ; num_in[4]                       ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; E15      ; 417        ; 7A       ; Column[2]                       ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; E16      ; 411        ; 7A       ; Row[1]                          ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; E17      ;            ;          ; DNU                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; E18      ;            ; 7A       ; VCCIO7A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; E19      ; 377        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -609,7 +609,7 @@ The pin-out file can be found in D:/Desktop/Project/DefuseBombVHDL/Object/keyboa
 ; G13      ; 439        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; G14      ;            ; 7A       ; VCCIO7A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; G15      ; 426        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; G16      ; 412        ; 7A       ; num_in[0]                       ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; G16      ; 412        ; 7A       ; Column[0]                       ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; G17      ; 410        ; 7A       ; num_out[2]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; G18      ; 413        ; 7A       ; num_out[1]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; G19      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -631,7 +631,7 @@ The pin-out file can be found in D:/Desktop/Project/DefuseBombVHDL/Object/keyboa
 ; H13      ; 437        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; H14      ; 429        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; H15      ; 423        ; 7A       ; num_out[3]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; H16      ; 421        ; 7A       ; num_in[5]                       ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; H16      ; 421        ; 7A       ; Column[1]                       ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; H17      ;            ; 7A       ; VCCIO7A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; H18      ; 415        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; H19      ;            ; --       ; VCCA_FPLL                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
@@ -925,12 +925,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; num_out[1] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; num_out[2] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; num_out[3] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; num_in[1]  ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; num_in[3]  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; num_in[5]  ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; num_in[0]  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; num_in[2]  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; num_in[4]  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; Row[0]     ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; Row[2]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; Column[1]  ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; Column[0]  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; Column[2]  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; Row[1]     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
@@ -939,32 +939,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; Source Pin / Fanout ; Pad To Core Index ; Setting ;
 +---------------------+-------------------+---------+
-; num_in[1]           ;                   ;         ;
+; Row[0]              ;                   ;         ;
 ;      - Mux3~0       ; 1                 ; 0       ;
 ;      - Mux2~0       ; 1                 ; 0       ;
 ;      - Mux1~0       ; 1                 ; 0       ;
 ;      - Mux0~0       ; 1                 ; 0       ;
-; num_in[3]           ;                   ;         ;
+; Row[2]              ;                   ;         ;
 ;      - Mux3~0       ; 0                 ; 0       ;
 ;      - Mux2~0       ; 0                 ; 0       ;
 ;      - Mux1~0       ; 0                 ; 0       ;
-;      - Mux0~0       ; 0                 ; 0       ;
-; num_in[5]           ;                   ;         ;
+; Column[1]           ;                   ;         ;
 ;      - Mux3~0       ; 1                 ; 0       ;
 ;      - Mux2~0       ; 1                 ; 0       ;
 ;      - Mux1~0       ; 1                 ; 0       ;
 ;      - Mux0~0       ; 1                 ; 0       ;
-; num_in[0]           ;                   ;         ;
+; Column[0]           ;                   ;         ;
 ;      - Mux3~0       ; 0                 ; 0       ;
 ;      - Mux2~0       ; 0                 ; 0       ;
 ;      - Mux1~0       ; 0                 ; 0       ;
 ;      - Mux0~0       ; 0                 ; 0       ;
-; num_in[2]           ;                   ;         ;
+; Column[2]           ;                   ;         ;
 ;      - Mux3~0       ; 0                 ; 0       ;
 ;      - Mux2~0       ; 0                 ; 0       ;
 ;      - Mux1~0       ; 0                 ; 0       ;
 ;      - Mux0~0       ; 0                 ; 0       ;
-; num_in[4]           ;                   ;         ;
+; Row[1]              ;                   ;         ;
 ;      - Mux3~0       ; 0                 ; 0       ;
 ;      - Mux2~0       ; 0                 ; 0       ;
 ;      - Mux1~0       ; 0                 ; 0       ;
@@ -977,12 +976,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+---------------+
 ; Name            ; Fan-Out       ;
 +-----------------+---------------+
-; num_in[4]~input ; 4             ;
-; num_in[2]~input ; 4             ;
-; num_in[0]~input ; 4             ;
-; num_in[5]~input ; 4             ;
-; num_in[3]~input ; 4             ;
-; num_in[1]~input ; 4             ;
+; Row[1]~input    ; 4             ;
+; Column[2]~input ; 4             ;
+; Column[0]~input ; 4             ;
+; Column[1]~input ; 4             ;
+; Row[0]~input    ; 4             ;
+; Row[2]~input    ; 3             ;
 ; Mux0~0          ; 1             ;
 ; Mux1~0          ; 1             ;
 ; Mux2~0          ; 1             ;
@@ -1079,12 +1078,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; num_out[1]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; num_out[2]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; num_out[3]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; num_in[1]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; num_in[3]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; num_in[5]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; num_in[0]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; num_in[2]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; num_in[4]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; Row[0]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; Row[2]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; Column[1]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; Column[0]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; Column[2]          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; Row[1]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
 
 
@@ -1142,12 +1141,12 @@ Critical Warning (169085): No exact pin location assignment(s) for 10 pins of 10
     Info (169086): Pin num_out[1] not assigned to an exact location on the device
     Info (169086): Pin num_out[2] not assigned to an exact location on the device
     Info (169086): Pin num_out[3] not assigned to an exact location on the device
-    Info (169086): Pin num_in[1] not assigned to an exact location on the device
-    Info (169086): Pin num_in[3] not assigned to an exact location on the device
-    Info (169086): Pin num_in[5] not assigned to an exact location on the device
-    Info (169086): Pin num_in[0] not assigned to an exact location on the device
-    Info (169086): Pin num_in[2] not assigned to an exact location on the device
-    Info (169086): Pin num_in[4] not assigned to an exact location on the device
+    Info (169086): Pin Row[0] not assigned to an exact location on the device
+    Info (169086): Pin Row[2] not assigned to an exact location on the device
+    Info (169086): Pin Column[1] not assigned to an exact location on the device
+    Info (169086): Pin Column[0] not assigned to an exact location on the device
+    Info (169086): Pin Column[2] not assigned to an exact location on the device
+    Info (169086): Pin Row[1] not assigned to an exact location on the device
 Info (184020): Starting Fitter periphery placement operations
 Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:00
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'keyboard.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -1173,7 +1172,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.08 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.06 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1181,9 +1180,9 @@ Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
 Info (144001): Generated suppressed messages file D:/Desktop/Project/DefuseBombVHDL/Object/keyboard/output_files/keyboard.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5832 megabytes
-    Info: Processing ended: Sun May 17 23:16:46 2020
-    Info: Elapsed time: 00:00:30
+    Info: Peak virtual memory: 5839 megabytes
+    Info: Processing ended: Tue May 19 20:21:01 2020
+    Info: Elapsed time: 00:00:29
     Info: Total CPU time (on all processors): 00:00:29
 
 

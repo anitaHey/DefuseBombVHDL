@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.ALL;
+
+entity de_change is
+port( CLK,reset :in std_logic;
+		z         :out std_logic_vector(3 downto 0));
+end de_change;
+
+architecture a of de_change is
+signal op: std_logic_vector(3 downto 0);
+begin	
+	process(CLK)
+	begin
+	if CLK'event and CLK='1' then
+		case op is 
+			when "0001" =>
+				op <= "0101";
+			when "0101" =>
+				op <= "0111";
+			when "0111" =>
+				op <= "0110";
+			when "0110" =>
+				op <= "0110";
+			when others =>
+				op <="0001";
+		end case;
+	end if;
+	end process;
+	z <= op;
+end a;

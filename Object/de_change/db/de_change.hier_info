@@ -1,0 +1,9 @@
+|de_change
+CLK => op[0].CLK
+CLK => op[1].CLK
+CLK => op[2].CLK
+z[0] <= op[0].DB_MAX_OUTPUT_PORT_TYPE
+z[1] <= op[1].DB_MAX_OUTPUT_PORT_TYPE
+z[2] <= op[2].DB_MAX_OUTPUT_PORT_TYPE
+
+

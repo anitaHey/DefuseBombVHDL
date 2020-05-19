@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Desktop\Project\DefuseBombVHDL\test\key_to_seg7\simulation\qsim
+vkey_to_seg7
+Z1 !s100 3[L@TP3jYE]n<dLl_b[eQ0
+Z2 Ibh@Q5YX_d5?11OQXAMiEa1
+Z3 Vhah19eaBXMK5XFHGnESJ10
+Z4 dD:\Desktop\Project\DefuseBombVHDL\test\key_to_seg7\simulation\qsim
+Z5 w1589892597
+Z6 8key_to_seg7.vo
+Z7 Fkey_to_seg7.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|key_to_seg7.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1589892597.729000
+Z12 !s107 key_to_seg7.vo|
+!s101 -O0
+vkey_to_seg7_vlg_check_tst
+!i10b 1
+Z13 !s100 =09HXYhaUVi]BZ<_n7GiN0
+Z14 I4a^V?_TzE3U6QWT`]H]l43
+Z15 V0bG]f@Y@4_CFi^A^HQ1]f1
+R4
+Z16 w1589892596
+Z17 8Waveform.vwf.vt
+Z18 FWaveform.vwf.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z19 !s108 1589892597.794000
+Z20 !s107 Waveform.vwf.vt|
+Z21 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+vkey_to_seg7_vlg_sample_tst
+!i10b 1
+Z22 !s100 ^]]A=eGJ7JfYCfS<P3kT93
+Z23 IRkF<[d]JSEd?k21`QlLle2
+Z24 Va@Y@<onWZ:o7AR_Uk2^AZ3
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vkey_to_seg7_vlg_vec_tst
+!i10b 1
+!s100 8=2_kbX2fi[JMENLfT5bk3
+IZcM0K[>JIJUbX10?SWX^a3
+Z25 VL7`nORmgHTWYa6H_bi;PN2
+R4
+R16
+R17
+R18
+Z26 L0 401
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
