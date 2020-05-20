@@ -1,0 +1,108 @@
+|LEDCounterTest
+E2 <= z[11].DB_MAX_OUTPUT_PORT_TYPE
+clk_W16 => clk_gen:inst.clock
+D3 <= z[10].DB_MAX_OUTPUT_PORT_TYPE
+C2 <= z[9].DB_MAX_OUTPUT_PORT_TYPE
+C1 <= z[8].DB_MAX_OUTPUT_PORT_TYPE
+L2 <= z[7].DB_MAX_OUTPUT_PORT_TYPE
+L1 <= z[6].DB_MAX_OUTPUT_PORT_TYPE
+G2 <= z[5].DB_MAX_OUTPUT_PORT_TYPE
+G1 <= z[4].DB_MAX_OUTPUT_PORT_TYPE
+U2 <= z[3].DB_MAX_OUTPUT_PORT_TYPE
+N1 <= z[2].DB_MAX_OUTPUT_PORT_TYPE
+AA2 <= z[1].DB_MAX_OUTPUT_PORT_TYPE
+AA1 <= z[0].DB_MAX_OUTPUT_PORT_TYPE
+com_N20 <= <VCC>
+
+
+|LEDCounterTest|LEDFlashing:inst1
+clk => op[0].CLK
+clk => op[1].CLK
+clk => op[2].CLK
+clk => op[3].CLK
+clk => op[4].CLK
+clk => op[5].CLK
+clk => op[6].CLK
+clk => op[7].CLK
+clk => op[8].CLK
+clk => op[9].CLK
+clk => op[10].CLK
+clk => op[11].CLK
+z[0] <= op[0].DB_MAX_OUTPUT_PORT_TYPE
+z[1] <= op[1].DB_MAX_OUTPUT_PORT_TYPE
+z[2] <= op[2].DB_MAX_OUTPUT_PORT_TYPE
+z[3] <= op[3].DB_MAX_OUTPUT_PORT_TYPE
+z[4] <= op[4].DB_MAX_OUTPUT_PORT_TYPE
+z[5] <= op[5].DB_MAX_OUTPUT_PORT_TYPE
+z[6] <= op[6].DB_MAX_OUTPUT_PORT_TYPE
+z[7] <= op[7].DB_MAX_OUTPUT_PORT_TYPE
+z[8] <= op[8].DB_MAX_OUTPUT_PORT_TYPE
+z[9] <= op[9].DB_MAX_OUTPUT_PORT_TYPE
+z[10] <= op[10].DB_MAX_OUTPUT_PORT_TYPE
+z[11] <= op[11].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LEDCounterTest|clk_gen:inst
+1KHz <= div10_t:inst3.CLK_out
+clock => div10_t:inst.CLK
+100Hz <= div10_t:inst4.CLK_out
+10Hz <= div10_t:inst5.CLK_out
+1Hz <= div10_t:inst6.CLK_out
+
+
+|LEDCounterTest|clk_gen:inst|div10_t:inst3
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|LEDCounterTest|clk_gen:inst|div10_t:inst2
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|LEDCounterTest|clk_gen:inst|div10_t:inst1
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|LEDCounterTest|clk_gen:inst|div10_t:inst
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|LEDCounterTest|clk_gen:inst|div10_t:inst4
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|LEDCounterTest|clk_gen:inst|div10_t:inst5
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|LEDCounterTest|clk_gen:inst|div10_t:inst6
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
