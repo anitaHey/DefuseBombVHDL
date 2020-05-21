@@ -1,0 +1,6 @@
+|input_decoder
+isValid <= inst.DB_MAX_OUTPUT_PORT_TYPE
+input_prev => inst.IN0
+input_next => inst1.IN0
+
+

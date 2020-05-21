@@ -1,30 +1,17 @@
 |keyboard
-Row[0] => Mux0.IN33
-Row[0] => Mux1.IN66
-Row[0] => Mux2.IN66
-Row[0] => Mux3.IN66
-Row[1] => Mux0.IN32
-Row[1] => Mux1.IN65
-Row[1] => Mux2.IN65
-Row[1] => Mux3.IN65
-Row[2] => Mux1.IN64
-Row[2] => Mux2.IN64
-Row[2] => Mux3.IN64
-Column[0] => Mux0.IN36
-Column[0] => Mux1.IN69
-Column[0] => Mux2.IN69
-Column[0] => Mux3.IN69
-Column[1] => Mux0.IN35
-Column[1] => Mux1.IN68
-Column[1] => Mux2.IN68
-Column[1] => Mux3.IN68
-Column[2] => Mux0.IN34
-Column[2] => Mux1.IN67
-Column[2] => Mux2.IN67
-Column[2] => Mux3.IN67
-num_out[0] << Mux3.DB_MAX_OUTPUT_PORT_TYPE
-num_out[1] << Mux2.DB_MAX_OUTPUT_PORT_TYPE
-num_out[2] << Mux1.DB_MAX_OUTPUT_PORT_TYPE
-num_out[3] << Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Row[0] => ~NO_FANOUT~
+Row[1] => ~NO_FANOUT~
+Row[2] => ~NO_FANOUT~
+Column[0] => ~NO_FANOUT~
+Column[1] => ~NO_FANOUT~
+Column[2] => ~NO_FANOUT~
+valid_in => num_out[3].DATAIN
+valid_in => num_out[1].DATAIN
+valid_in => num_out[0].DATAIN
+num_out[0] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
+num_out[1] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
+num_out[2] <= <VCC>
+num_out[3] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
+valid_out <= <GND>
 
 
