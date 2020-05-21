@@ -420,7 +420,7 @@ applicable agreement for further details.
 (symbol
 	(rect 688 248 896 360)
 	(text "keyboard" (rect 5 0 51 12)(font "Arial" ))
-	(text "inst7" (rect 8 96 31 108)(font "Arial" ))
+	(text "inst1" (rect 8 96 31 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)

@@ -1,17 +1,15 @@
 |keyboard
-Row[0] => ~NO_FANOUT~
-Row[1] => ~NO_FANOUT~
-Row[2] => ~NO_FANOUT~
-Column[0] => ~NO_FANOUT~
-Column[1] => ~NO_FANOUT~
-Column[2] => ~NO_FANOUT~
-valid_in => num_out[3].DATAIN
-valid_in => num_out[1].DATAIN
-valid_in => num_out[0].DATAIN
-num_out[0] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
-num_out[1] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
-num_out[2] <= <VCC>
-num_out[3] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
-valid_out <= <GND>
+Row[0] => num_in[3].DATAIN
+Row[1] => num_in[4].DATAIN
+Row[2] => num_in[5].DATAIN
+Column[0] => num_in[0].DATAIN
+Column[1] => num_in[1].DATAIN
+Column[2] => num_in[2].DATAIN
+valid_in => process_0.IN1
+num_out[0] <= save[0].DB_MAX_OUTPUT_PORT_TYPE
+num_out[1] <= save[1].DB_MAX_OUTPUT_PORT_TYPE
+num_out[2] <= save[2].DB_MAX_OUTPUT_PORT_TYPE
+num_out[3] <= save[3].DB_MAX_OUTPUT_PORT_TYPE
+valid_out <= valid_out$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 

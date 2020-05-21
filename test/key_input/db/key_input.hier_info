@@ -2,11 +2,11 @@
 A <= num_out[6].DB_MAX_OUTPUT_PORT_TYPE
 clk => clk_gen:inst5.clock
 RK1 => keyboard:inst.Column[2]
-RK1 => keyboard:inst7.Column[2]
+RK1 => keyboard:inst1.Column[2]
 RK2 => keyboard:inst.Column[1]
-RK2 => keyboard:inst7.Column[1]
+RK2 => keyboard:inst1.Column[1]
 RK3 => keyboard:inst.Column[0]
-RK3 => keyboard:inst7.Column[0]
+RK3 => keyboard:inst1.Column[0]
 B <= num_out[5].DB_MAX_OUTPUT_PORT_TYPE
 C <= num_out[4].DB_MAX_OUTPUT_PORT_TYPE
 D <= num_out[3].DB_MAX_OUTPUT_PORT_TYPE
@@ -179,36 +179,32 @@ CLK => 2.CLK
 
 
 |key_input|keyboard:inst
-Row[0] => ~NO_FANOUT~
-Row[1] => ~NO_FANOUT~
-Row[2] => ~NO_FANOUT~
-Column[0] => ~NO_FANOUT~
-Column[1] => ~NO_FANOUT~
-Column[2] => ~NO_FANOUT~
-valid_in => num_out[3].DATAIN
-valid_in => num_out[1].DATAIN
-valid_in => num_out[0].DATAIN
-num_out[0] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
-num_out[1] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
-num_out[2] <= <VCC>
-num_out[3] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
-valid_out <= <GND>
+Row[0] => num_in[3].DATAIN
+Row[1] => num_in[4].DATAIN
+Row[2] => num_in[5].DATAIN
+Column[0] => num_in[0].DATAIN
+Column[1] => num_in[1].DATAIN
+Column[2] => num_in[2].DATAIN
+valid_in => process_0.IN1
+num_out[0] <= save[0].DB_MAX_OUTPUT_PORT_TYPE
+num_out[1] <= save[1].DB_MAX_OUTPUT_PORT_TYPE
+num_out[2] <= save[2].DB_MAX_OUTPUT_PORT_TYPE
+num_out[3] <= save[3].DB_MAX_OUTPUT_PORT_TYPE
+valid_out <= valid_out$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|key_input|keyboard:inst7
-Row[0] => ~NO_FANOUT~
-Row[1] => ~NO_FANOUT~
-Row[2] => ~NO_FANOUT~
-Column[0] => ~NO_FANOUT~
-Column[1] => ~NO_FANOUT~
-Column[2] => ~NO_FANOUT~
-valid_in => num_out[3].DATAIN
-valid_in => num_out[1].DATAIN
-valid_in => num_out[0].DATAIN
-num_out[0] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
-num_out[1] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
-num_out[2] <= <VCC>
-num_out[3] <= valid_in.DB_MAX_OUTPUT_PORT_TYPE
-valid_out <= <GND>
+|key_input|keyboard:inst1
+Row[0] => num_in[3].DATAIN
+Row[1] => num_in[4].DATAIN
+Row[2] => num_in[5].DATAIN
+Column[0] => num_in[0].DATAIN
+Column[1] => num_in[1].DATAIN
+Column[2] => num_in[2].DATAIN
+valid_in => process_0.IN1
+num_out[0] <= save[0].DB_MAX_OUTPUT_PORT_TYPE
+num_out[1] <= save[1].DB_MAX_OUTPUT_PORT_TYPE
+num_out[2] <= save[2].DB_MAX_OUTPUT_PORT_TYPE
+num_out[3] <= save[3].DB_MAX_OUTPUT_PORT_TYPE
+valid_out <= valid_out$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 

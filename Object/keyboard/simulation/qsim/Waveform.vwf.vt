@@ -1,0 +1,313 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "05/21/2020 14:04:14"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    keyboard
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module keyboard_vlg_sample_tst(
+	Column,
+	Row,
+	valid_in,
+	sampler_tx
+);
+input [2:0] Column;
+input [2:0] Row;
+input  valid_in;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(Column or Row or valid_in)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module keyboard_vlg_check_tst (
+	num_out,
+	valid_out,
+	sampler_rx
+);
+input [3:0] num_out;
+input  valid_out;
+input sampler_rx;
+
+reg [3:0] num_out_expected;
+reg  valid_out_expected;
+
+reg [3:0] num_out_prev;
+reg  valid_out_prev;
+
+reg [3:0] num_out_expected_prev;
+reg  valid_out_expected_prev;
+
+reg [3:0] last_num_out_exp;
+reg  last_valid_out_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:2] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 2'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	num_out_prev = num_out;
+	valid_out_prev = valid_out;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	num_out_expected_prev = num_out_expected;
+	valid_out_expected_prev = valid_out_expected;
+end
+
+
+// expected num_out[ 3 ]
+initial
+begin
+	num_out_expected[3] = 1'bX;
+end 
+// expected num_out[ 2 ]
+initial
+begin
+	num_out_expected[2] = 1'bX;
+end 
+// expected num_out[ 1 ]
+initial
+begin
+	num_out_expected[1] = 1'bX;
+end 
+// expected num_out[ 0 ]
+initial
+begin
+	num_out_expected[0] = 1'bX;
+end 
+
+// expected valid_out
+initial
+begin
+	valid_out_expected = 1'bX;
+end 
+// generate trigger
+always @(num_out_expected or num_out or valid_out_expected or valid_out)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected num_out = %b | expected valid_out = %b | ",num_out_expected_prev,valid_out_expected_prev);
+	$display("| real num_out = %b | real valid_out = %b | ",num_out_prev,valid_out_prev);
+`endif
+	if (
+		( num_out_expected_prev[0] !== 1'bx ) && ( num_out_prev[0] !== num_out_expected_prev[0] )
+		&& ((num_out_expected_prev[0] !== last_num_out_exp[0]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port num_out[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", num_out_expected_prev);
+		$display ("     Real value = %b", num_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_num_out_exp[0] = num_out_expected_prev[0];
+	end
+	if (
+		( num_out_expected_prev[1] !== 1'bx ) && ( num_out_prev[1] !== num_out_expected_prev[1] )
+		&& ((num_out_expected_prev[1] !== last_num_out_exp[1]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port num_out[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", num_out_expected_prev);
+		$display ("     Real value = %b", num_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_num_out_exp[1] = num_out_expected_prev[1];
+	end
+	if (
+		( num_out_expected_prev[2] !== 1'bx ) && ( num_out_prev[2] !== num_out_expected_prev[2] )
+		&& ((num_out_expected_prev[2] !== last_num_out_exp[2]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port num_out[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", num_out_expected_prev);
+		$display ("     Real value = %b", num_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_num_out_exp[2] = num_out_expected_prev[2];
+	end
+	if (
+		( num_out_expected_prev[3] !== 1'bx ) && ( num_out_prev[3] !== num_out_expected_prev[3] )
+		&& ((num_out_expected_prev[3] !== last_num_out_exp[3]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port num_out[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", num_out_expected_prev);
+		$display ("     Real value = %b", num_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_num_out_exp[3] = num_out_expected_prev[3];
+	end
+	if (
+		( valid_out_expected_prev !== 1'bx ) && ( valid_out_prev !== valid_out_expected_prev )
+		&& ((valid_out_expected_prev !== last_valid_out_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port valid_out :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", valid_out_expected_prev);
+		$display ("     Real value = %b", valid_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_valid_out_exp = valid_out_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module keyboard_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [2:0] Column;
+reg [2:0] Row;
+reg valid_in;
+// wires                                               
+wire [3:0] num_out;
+wire valid_out;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+keyboard i1 (
+// port map - connection between master ports and signals/registers   
+	.Column(Column),
+	.num_out(num_out),
+	.Row(Row),
+	.valid_in(valid_in),
+	.valid_out(valid_out)
+);
+// Column[ 2 ]
+initial
+begin
+	Column[2] = 1'b0;
+end 
+// Column[ 1 ]
+always
+begin
+	Column[1] = 1'b0;
+	Column[1] = #50000 1'b1;
+	#50000;
+end 
+// Column[ 0 ]
+always
+begin
+	Column[0] = 1'b0;
+	Column[0] = #50000 1'b1;
+	#50000;
+end 
+// Row[ 2 ]
+initial
+begin
+	Row[2] = 1'b0;
+end 
+// Row[ 1 ]
+initial
+begin
+	Row[1] = 1'b0;
+end 
+// Row[ 0 ]
+initial
+begin
+	Row[0] = 1'b0;
+end 
+
+// valid_in
+always
+begin
+	valid_in = 1'b0;
+	valid_in = #50000 1'b1;
+	#50000;
+end 
+
+keyboard_vlg_sample_tst tb_sample (
+	.Column(Column),
+	.Row(Row),
+	.valid_in(valid_in),
+	.sampler_tx(sampler)
+);
+
+keyboard_vlg_check_tst tb_out(
+	.num_out(num_out),
+	.valid_out(valid_out),
+	.sampler_rx(sampler)
+);
+endmodule
+

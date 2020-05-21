@@ -1,5 +1,5 @@
 Fitter report for key_input
-Wed May 20 18:03:50 2020
+Thu May 21 14:09:34 2020
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +---------------------------------+--------------------------------------------+
-; Fitter Status                   ; Successful - Wed May 20 18:03:50 2020      ;
+; Fitter Status                   ; Successful - Thu May 21 14:09:34 2020      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; key_input                                  ;
 ; Top-level Entity Name           ; key_input                                  ;
@@ -71,7 +71,7 @@ applicable agreement for further details.
 ; Device                          ; 5CEFA2F23C8                                ;
 ; Timing Models                   ; Final                                      ;
 ; Logic utilization (in ALMs)     ; 21 / 9,430 ( < 1 % )                       ;
-; Total registers                 ; 23                                         ;
+; Total registers                 ; 19                                         ;
 ; Total pins                      ; 14 / 224 ( 6 % )                           ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0 / 1,802,240 ( 0 % )                      ;
@@ -148,15 +148,16 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
+; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.43        ;
+; Average used               ; 1.82        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;  14.3%      ;
+;     Processors 2-4         ;  27.3%      ;
+;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -178,18 +179,14 @@ applicable agreement for further details.
 +----------+--------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                                  ;
-+-------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------+------------------+-----------------------+
-; Node                          ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                        ; Destination Port ; Destination Port Name ;
-+-------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------+------------------+-----------------------+
-; clk~inputCLKENA0              ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                         ;                  ;                       ;
-; clk_gen:inst5|div10_t:inst1|5 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_gen:inst5|div10_t:inst1|5~DUPLICATE ;                  ;                       ;
-; clk_gen:inst5|div10_t:inst2|5 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_gen:inst5|div10_t:inst2|5~DUPLICATE ;                  ;                       ;
-; clk_gen:inst5|div10_t:inst3|5 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_gen:inst5|div10_t:inst3|5~DUPLICATE ;                  ;                       ;
-; clk_gen:inst5|div10_t:inst|5  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_gen:inst5|div10_t:inst|5~DUPLICATE  ;                  ;                       ;
-; de_change:inst6|op[2]         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; de_change:inst6|op[2]~DUPLICATE         ;                  ;                       ;
-+-------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------+------------------+-----------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                                                ;
++------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------+------------------+-----------------------+
+; Node                         ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                       ; Destination Port ; Destination Port Name ;
++------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------+------------------+-----------------------+
+; clk~inputCLKENA0             ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                        ;                  ;                       ;
+; clk_gen:inst5|div10_t:inst|5 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_gen:inst5|div10_t:inst|5~DUPLICATE ;                  ;                       ;
++------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------+------------------+-----------------------+
 
 
 +-------------------------------------------------------------------------------------------------+
@@ -230,7 +227,7 @@ applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/G316/Desktop/DefuseBombVHDL/test/key_input/output_files/key_input.pin.
+The pin-out file can be found in C:/Users/jiaaa/Desktop/Project/DefuseBombVHDL/test/key_input/output_files/key_input.pin.
 
 
 +-------------------------------------------------------------------------------------+
@@ -264,14 +261,14 @@ The pin-out file can be found in C:/Users/G316/Desktop/DefuseBombVHDL/test/key_i
 ;     -- 5 input functions                                    ; 0             ;       ;
 ;     -- 4 input functions                                    ; 4             ;       ;
 ;     -- <=3 input functions                                  ; 17            ;       ;
-; Combinational ALUT usage for route-throughs                 ; 9             ;       ;
-; Dedicated logic registers                                   ; 23            ;       ;
+; Combinational ALUT usage for route-throughs                 ; 8             ;       ;
+; Dedicated logic registers                                   ; 19            ;       ;
 ;     -- By type:                                             ;               ;       ;
 ;         -- Primary logic registers                          ; 18 / 18,860   ; < 1 % ;
-;         -- Secondary logic registers                        ; 5 / 18,860    ; < 1 % ;
+;         -- Secondary logic registers                        ; 1 / 18,860    ; < 1 % ;
 ;     -- By function:                                         ;               ;       ;
 ;         -- Design implementation registers                  ; 18            ;       ;
-;         -- Routing optimization registers                   ; 5             ;       ;
+;         -- Routing optimization registers                   ; 1             ;       ;
 ;                                                             ;               ;       ;
 ; Virtual pins                                                ; 0             ;       ;
 ; I/O pins                                                    ; 14 / 224      ; 6 %   ;
@@ -297,10 +294,10 @@ The pin-out file can be found in C:/Users/G316/Desktop/DefuseBombVHDL/test/key_i
 ; Hard Memory Controllers                                     ; 0 / 1         ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0% / 0% / 0%  ;       ;
 ; Peak interconnect usage (total/H/V)                         ; 0% / 0% / 0%  ;       ;
-; Maximum fan-out                                             ; 7             ;       ;
-; Highest non-global fan-out                                  ; 7             ;       ;
-; Total fan-out                                               ; 130           ;       ;
-; Average fan-out                                             ; 1.59          ;       ;
+; Maximum fan-out                                             ; 6             ;       ;
+; Highest non-global fan-out                                  ; 6             ;       ;
+; Total fan-out                                               ; 118           ;       ;
+; Average fan-out                                             ; 1.53          ;       ;
 +-------------------------------------------------------------+---------------+-------+
 
 
@@ -335,7 +332,7 @@ The pin-out file can be found in C:/Users/G316/Desktop/DefuseBombVHDL/test/key_i
 ;     -- 5 input functions                                    ; 0                    ; 0                              ;
 ;     -- 4 input functions                                    ; 4                    ; 0                              ;
 ;     -- <=3 input functions                                  ; 17                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 9                    ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 8                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
 ;     -- 64-address deep                                      ; 0                    ; 0                              ;
 ;     -- 32-address deep                                      ; 0                    ; 0                              ;
@@ -343,10 +340,10 @@ The pin-out file can be found in C:/Users/G316/Desktop/DefuseBombVHDL/test/key_i
 ; Dedicated logic registers                                   ; 0                    ; 0                              ;
 ;     -- By type:                                             ;                      ;                                ;
 ;         -- Primary logic registers                          ; 18 / 18860 ( < 1 % ) ; 0 / 18860 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 5 / 18860 ( < 1 % )  ; 0 / 18860 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 1 / 18860 ( < 1 % )  ; 0 / 18860 ( 0 % )              ;
 ;     -- By function:                                         ;                      ;                                ;
 ;         -- Design implementation registers                  ; 18                   ; 0                              ;
-;         -- Routing optimization registers                   ; 5                    ; 0                              ;
+;         -- Routing optimization registers                   ; 1                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
@@ -363,8 +360,8 @@ The pin-out file can be found in C:/Users/G316/Desktop/DefuseBombVHDL/test/key_i
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 130                  ; 0                              ;
-;     -- Registered Connections                               ; 73                   ; 0                              ;
+;     -- Total Connections                                    ; 118                  ; 0                              ;
+;     -- Registered Connections                               ; 68                   ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
 ;     -- Top                                                  ; 0                    ; 0                              ;
@@ -935,14 +932,14 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------+--------------+
 ; Compilation Hierarchy Node ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Library Name ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------+--------------+
-; |key_input                 ; 20.5 (0.5)           ; 18.0 (0.5)                       ; 6.0 (0.0)                                         ; 8.5 (0.0)                        ; 0.0 (0.0)            ; 21 (1)              ; 23 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 14   ; 0            ; |key_input                             ; work         ;
-;    |clk_gen:inst5|         ; 17.5 (0.0)           ; 14.5 (0.0)                       ; 4.7 (0.0)                                         ; 7.7 (0.0)                        ; 0.0 (0.0)            ; 16 (0)              ; 20 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5               ; work         ;
+; |key_input                 ; 20.5 (0.5)           ; 18.0 (0.5)                       ; 6.0 (0.0)                                         ; 8.5 (0.0)                        ; 0.0 (0.0)            ; 21 (1)              ; 19 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 14   ; 0            ; |key_input                             ; work         ;
+;    |clk_gen:inst5|         ; 17.5 (0.0)           ; 14.5 (0.0)                       ; 4.7 (0.0)                                         ; 7.7 (0.0)                        ; 0.0 (0.0)            ; 16 (0)              ; 17 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5               ; work         ;
 ;       |div10_t:inst|       ; 2.5 (2.5)            ; 2.5 (2.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 4 (4)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst  ; work         ;
-;       |div10_t:inst1|      ; 5.5 (5.5)            ; 4.0 (4.0)                        ; 1.5 (1.5)                                         ; 3.0 (3.0)                        ; 0.0 (0.0)            ; 4 (4)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst1 ; work         ;
-;       |div10_t:inst2|      ; 5.5 (5.5)            ; 4.0 (4.0)                        ; 1.5 (1.5)                                         ; 3.0 (3.0)                        ; 0.0 (0.0)            ; 4 (4)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst2 ; work         ;
-;       |div10_t:inst3|      ; 4.0 (4.0)            ; 4.0 (4.0)                        ; 1.7 (1.7)                                         ; 1.7 (1.7)                        ; 0.0 (0.0)            ; 4 (4)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst3 ; work         ;
-;    |de_change:inst6|       ; 2.0 (2.0)            ; 2.0 (2.0)                        ; 0.8 (0.8)                                         ; 0.8 (0.8)                        ; 0.0 (0.0)            ; 2 (2)               ; 3 (3)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|de_change:inst6             ; work         ;
-;    |seg7:inst2|            ; 0.5 (0.5)            ; 1.0 (1.0)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|seg7:inst2                  ; work         ;
+;       |div10_t:inst1|      ; 5.5 (5.5)            ; 4.0 (4.0)                        ; 1.5 (1.5)                                         ; 3.0 (3.0)                        ; 0.0 (0.0)            ; 4 (4)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst1 ; work         ;
+;       |div10_t:inst2|      ; 5.5 (5.5)            ; 4.0 (4.0)                        ; 1.5 (1.5)                                         ; 3.0 (3.0)                        ; 0.0 (0.0)            ; 4 (4)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst2 ; work         ;
+;       |div10_t:inst3|      ; 4.0 (4.0)            ; 4.0 (4.0)                        ; 1.7 (1.7)                                         ; 1.7 (1.7)                        ; 0.0 (0.0)            ; 4 (4)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst3 ; work         ;
+;    |de_change:inst6|       ; 1.8 (1.8)            ; 2.0 (2.0)                        ; 1.1 (1.1)                                         ; 0.8 (0.8)                        ; 0.0 (0.0)            ; 2 (2)               ; 2 (2)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|de_change:inst6             ; work         ;
+;    |seg7:inst2|            ; 0.8 (0.8)            ; 1.0 (1.0)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |key_input|seg7:inst2                  ; work         ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -953,9 +950,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name ; Pin Type ; D1 ; D3_0 ; D3_1 ; D4 ; D5   ; D5 OE ; D5 OCT ; T11 (Postamble Gating) ; T11 (Postamble Ungating) ;
 +------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 ; A    ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; RK1  ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; RK2  ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; RK3  ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; B    ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; C    ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; D    ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
@@ -965,6 +959,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DE1  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; DE2  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; DE3  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; RK3  ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; RK2  ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; RK1  ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; clk  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
@@ -974,9 +971,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------+-------------------+---------+
 ; Source Pin / Fanout                 ; Pad To Core Index ; Setting ;
 +-------------------------------------+-------------------+---------+
-; RK1                                 ;                   ;         ;
-; RK2                                 ;                   ;         ;
 ; RK3                                 ;                   ;         ;
+; RK2                                 ;                   ;         ;
+; RK1                                 ;                   ;         ;
 ; clk                                 ;                   ;         ;
 ;      - clk_gen:inst5|div10_t:inst|2 ; 0                 ; 0       ;
 +-------------------------------------+-------------------+---------+
@@ -989,10 +986,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+---------------+---------+-------+--------+----------------------+------------------+---------------------------+
 ; clk                           ; PIN_W16       ; 2       ; Clock ; no     ; --                   ; --               ; --                        ;
 ; clk                           ; PIN_W16       ; 4       ; Clock ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; clk_gen:inst5|div10_t:inst1|2 ; FF_X48_Y1_N8  ; 7       ; Clock ; no     ; --                   ; --               ; --                        ;
-; clk_gen:inst5|div10_t:inst2|2 ; FF_X48_Y1_N17 ; 7       ; Clock ; no     ; --                   ; --               ; --                        ;
-; clk_gen:inst5|div10_t:inst3|2 ; FF_X49_Y1_N38 ; 5       ; Clock ; no     ; --                   ; --               ; --                        ;
-; clk_gen:inst5|div10_t:inst|2  ; FF_X47_Y1_N20 ; 7       ; Clock ; no     ; --                   ; --               ; --                        ;
+; clk_gen:inst5|div10_t:inst1|2 ; FF_X44_Y1_N56 ; 6       ; Clock ; no     ; --                   ; --               ; --                        ;
+; clk_gen:inst5|div10_t:inst2|2 ; FF_X44_Y1_N29 ; 6       ; Clock ; no     ; --                   ; --               ; --                        ;
+; clk_gen:inst5|div10_t:inst3|2 ; FF_X43_Y1_N56 ; 4       ; Clock ; no     ; --                   ; --               ; --                        ;
+; clk_gen:inst5|div10_t:inst|2  ; FF_X45_Y1_N47 ; 6       ; Clock ; no     ; --                   ; --               ; --                        ;
 +-------------------------------+---------------+---------+-------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1005,56 +1002,52 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+---------------------------+
 
 
-+---------------------------------------------------+
-; Non-Global High Fan-Out Signals                   ;
-+-----------------------------------------+---------+
-; Name                                    ; Fan-Out ;
-+-----------------------------------------+---------+
-; clk_gen:inst5|div10_t:inst|2            ; 7       ;
-; clk_gen:inst5|div10_t:inst1|2           ; 7       ;
-; clk_gen:inst5|div10_t:inst2|2           ; 7       ;
-; clk_gen:inst5|div10_t:inst3|2           ; 5       ;
-; de_change:inst6|op[1]                   ; 5       ;
-; de_change:inst6|op[2]~DUPLICATE         ; 4       ;
-; clk_gen:inst5|div10_t:inst2|5~DUPLICATE ; 3       ;
-; clk_gen:inst5|div10_t:inst3|5~DUPLICATE ; 3       ;
-; clk_gen:inst5|div10_t:inst|3            ; 3       ;
-; clk_gen:inst5|div10_t:inst1|3           ; 3       ;
-; clk_gen:inst5|div10_t:inst2|3           ; 3       ;
-; clk_gen:inst5|div10_t:inst3|3           ; 3       ;
-; seg7:inst2|Mux16~0                      ; 3       ;
-; clk_gen:inst5|div10_t:inst|5~DUPLICATE  ; 2       ;
-; clk_gen:inst5|div10_t:inst1|5~DUPLICATE ; 2       ;
-; clk_gen:inst5|div10_t:inst|5~0          ; 2       ;
-; clk_gen:inst5|div10_t:inst1|5~0         ; 2       ;
-; clk_gen:inst5|div10_t:inst2|5~0         ; 2       ;
-; clk_gen:inst5|div10_t:inst3|5~0         ; 2       ;
-; de_change:inst6|op[2]~0                 ; 2       ;
-; clk_gen:inst5|div10_t:inst|5            ; 2       ;
-; clk_gen:inst5|div10_t:inst|1            ; 2       ;
-; clk_gen:inst5|div10_t:inst1|5           ; 2       ;
-; clk_gen:inst5|div10_t:inst1|1           ; 2       ;
-; clk_gen:inst5|div10_t:inst2|1           ; 2       ;
-; clk_gen:inst5|div10_t:inst3|1           ; 2       ;
-; seg7:inst2|Mux17~0                      ; 2       ;
-; de_change:inst6|op[2]                   ; 2       ;
-; clk~input                               ; 1       ;
-; clk_gen:inst5|div10_t:inst|1~0          ; 1       ;
-; clk_gen:inst5|div10_t:inst|3~0          ; 1       ;
-; clk_gen:inst5|div10_t:inst|2~0          ; 1       ;
-; clk_gen:inst5|div10_t:inst1|1~0         ; 1       ;
-; clk_gen:inst5|div10_t:inst1|3~0         ; 1       ;
-; clk_gen:inst5|div10_t:inst1|2~0         ; 1       ;
-; clk_gen:inst5|div10_t:inst2|1~0         ; 1       ;
-; clk_gen:inst5|div10_t:inst2|3~0         ; 1       ;
-; clk_gen:inst5|div10_t:inst2|2~0         ; 1       ;
-; clk_gen:inst5|div10_t:inst2|5           ; 1       ;
-; clk_gen:inst5|div10_t:inst3|1~0         ; 1       ;
-; clk_gen:inst5|div10_t:inst3|3~0         ; 1       ;
-; clk_gen:inst5|div10_t:inst3|2~0         ; 1       ;
-; clk_gen:inst5|div10_t:inst3|5           ; 1       ;
-; de_change:inst6|Mux1~0                  ; 1       ;
-+-----------------------------------------+---------+
++--------------------------------------------------+
+; Non-Global High Fan-Out Signals                  ;
++----------------------------------------+---------+
+; Name                                   ; Fan-Out ;
++----------------------------------------+---------+
+; clk_gen:inst5|div10_t:inst|2           ; 6       ;
+; clk_gen:inst5|div10_t:inst1|2          ; 6       ;
+; clk_gen:inst5|div10_t:inst2|2          ; 6       ;
+; de_change:inst6|op[2]                  ; 6       ;
+; clk_gen:inst5|div10_t:inst1|5          ; 4       ;
+; clk_gen:inst5|div10_t:inst2|5          ; 4       ;
+; clk_gen:inst5|div10_t:inst3|5          ; 4       ;
+; clk_gen:inst5|div10_t:inst3|2          ; 4       ;
+; de_change:inst6|op[1]                  ; 4       ;
+; clk_gen:inst5|div10_t:inst|3           ; 3       ;
+; clk_gen:inst5|div10_t:inst1|3          ; 3       ;
+; clk_gen:inst5|div10_t:inst2|3          ; 3       ;
+; clk_gen:inst5|div10_t:inst3|3          ; 3       ;
+; clk_gen:inst5|div10_t:inst|5~DUPLICATE ; 2       ;
+; clk_gen:inst5|div10_t:inst|5~0         ; 2       ;
+; clk_gen:inst5|div10_t:inst|5           ; 2       ;
+; clk_gen:inst5|div10_t:inst|1           ; 2       ;
+; clk_gen:inst5|div10_t:inst1|1          ; 2       ;
+; clk_gen:inst5|div10_t:inst2|1          ; 2       ;
+; clk_gen:inst5|div10_t:inst3|1          ; 2       ;
+; seg7:inst2|Mux14~0                     ; 2       ;
+; clk~input                              ; 1       ;
+; clk_gen:inst5|div10_t:inst1|5~0        ; 1       ;
+; clk_gen:inst5|div10_t:inst2|5~0        ; 1       ;
+; clk_gen:inst5|div10_t:inst3|5~0        ; 1       ;
+; de_change:inst6|op[2]~1                ; 1       ;
+; clk_gen:inst5|div10_t:inst|1~0         ; 1       ;
+; clk_gen:inst5|div10_t:inst|3~0         ; 1       ;
+; clk_gen:inst5|div10_t:inst|2~0         ; 1       ;
+; clk_gen:inst5|div10_t:inst1|1~0        ; 1       ;
+; clk_gen:inst5|div10_t:inst1|3~0        ; 1       ;
+; clk_gen:inst5|div10_t:inst1|2~0        ; 1       ;
+; clk_gen:inst5|div10_t:inst2|1~0        ; 1       ;
+; clk_gen:inst5|div10_t:inst2|3~0        ; 1       ;
+; clk_gen:inst5|div10_t:inst2|2~0        ; 1       ;
+; clk_gen:inst5|div10_t:inst3|1~0        ; 1       ;
+; clk_gen:inst5|div10_t:inst3|3~0        ; 1       ;
+; clk_gen:inst5|div10_t:inst3|2~0        ; 1       ;
+; de_change:inst6|op[1]~0                ; 1       ;
+; seg7:inst2|Mux17~0                     ; 1       ;
++----------------------------------------+---------+
 
 
 +-------------------------------------------------------+
@@ -1062,21 +1055,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------+------------------------+
 ; Routing Resource Type        ; Usage                  ;
 +------------------------------+------------------------+
-; Block interconnects          ; 26 / 140,056 ( < 1 % ) ;
-; C12 interconnects            ; 1 / 6,048 ( < 1 % )    ;
-; C2 interconnects             ; 8 / 54,648 ( < 1 % )   ;
+; Block interconnects          ; 20 / 140,056 ( < 1 % ) ;
+; C12 interconnects            ; 0 / 6,048 ( 0 % )      ;
+; C2 interconnects             ; 5 / 54,648 ( < 1 % )   ;
 ; C4 interconnects             ; 6 / 25,920 ( < 1 % )   ;
 ; DQS bus muxes                ; 0 / 17 ( 0 % )         ;
 ; DQS-18 I/O buses             ; 0 / 17 ( 0 % )         ;
 ; DQS-9 I/O buses              ; 0 / 17 ( 0 % )         ;
-; Direct links                 ; 7 / 140,056 ( < 1 % )  ;
+; Direct links                 ; 3 / 140,056 ( < 1 % )  ;
 ; Global clocks                ; 1 / 16 ( 6 % )         ;
-; Local interconnects          ; 28 / 36,960 ( < 1 % )  ;
+; Local interconnects          ; 29 / 36,960 ( < 1 % )  ;
 ; Quadrant clocks              ; 0 / 88 ( 0 % )         ;
-; R14 interconnects            ; 7 / 5,984 ( < 1 % )    ;
-; R14/C12 interconnect drivers ; 8 / 9,504 ( < 1 % )    ;
-; R3 interconnects             ; 17 / 60,192 ( < 1 % )  ;
-; R6 interconnects             ; 11 / 127,072 ( < 1 % ) ;
+; R14 interconnects            ; 4 / 5,984 ( < 1 % )    ;
+; R14/C12 interconnect drivers ; 4 / 9,504 ( < 1 % )    ;
+; R3 interconnects             ; 18 / 60,192 ( < 1 % )  ;
+; R6 interconnects             ; 10 / 127,072 ( < 1 % ) ;
 ; Spine clocks                 ; 1 / 120 ( < 1 % )      ;
 ; Wire stub REs                ; 0 / 7,344 ( 0 % )      ;
 +------------------------------+------------------------+
@@ -1142,9 +1135,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total Inapplicable ; 0         ; 14           ; 0         ; 14           ; 14           ; 0         ; 0         ; 14           ; 0         ; 0         ; 14           ; 4            ; 14           ; 14           ; 14           ; 14           ; 4            ; 14           ; 14           ; 14           ; 14           ; 4            ; 14           ; 14           ; 14           ; 14           ; 14           ; 14           ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; A                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; RK1                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; RK2                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; RK3                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; B                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; C                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; D                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
@@ -1154,6 +1144,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DE1                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; DE2                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; DE3                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; RK3                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; RK2                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; RK1                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; clk                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
 
@@ -1203,8 +1196,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Clock(s)               ; Destination Clock(s)          ; Delay Added in ns ;
 +-------------------------------+-------------------------------+-------------------+
 ; clk                           ; clk                           ; 8.1               ;
-; clk_gen:inst5|div10_t:inst2|2 ; clk_gen:inst5|div10_t:inst2|2 ; 1.6               ;
-; clk_gen:inst5|div10_t:inst|2  ; clk_gen:inst5|div10_t:inst|2  ; 1.6               ;
+; clk_gen:inst5|div10_t:inst2|2 ; clk_gen:inst5|div10_t:inst2|2 ; 1.3               ;
+; clk_gen:inst5|div10_t:inst|2  ; clk_gen:inst5|div10_t:inst|2  ; 1.3               ;
 +-------------------------------+-------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
@@ -1215,23 +1208,24 @@ This will disable optimization of problematic paths and expose them for further 
 +-------------------------------+-------------------------------+-------------------+
 ; Source Register               ; Destination Register          ; Delay Added in ns ;
 +-------------------------------+-------------------------------+-------------------+
-; clk_gen:inst5|div10_t:inst|2  ; clk_gen:inst5|div10_t:inst|3  ; 3.572             ;
-; clk_gen:inst5|div10_t:inst1|2 ; clk_gen:inst5|div10_t:inst1|2 ; 0.683             ;
-; clk_gen:inst5|div10_t:inst3|2 ; clk_gen:inst5|div10_t:inst3|2 ; 0.669             ;
-; clk_gen:inst5|div10_t:inst|5  ; clk_gen:inst5|div10_t:inst|3  ; 0.413             ;
+; clk_gen:inst5|div10_t:inst|2  ; clk_gen:inst5|div10_t:inst|3  ; 3.560             ;
+; clk_gen:inst5|div10_t:inst1|2 ; clk_gen:inst5|div10_t:inst1|2 ; 0.563             ;
+; clk_gen:inst5|div10_t:inst3|2 ; clk_gen:inst5|div10_t:inst3|2 ; 0.508             ;
+; clk_gen:inst5|div10_t:inst|3  ; clk_gen:inst5|div10_t:inst|1  ; 0.410             ;
+; clk_gen:inst5|div10_t:inst|5  ; clk_gen:inst5|div10_t:inst|3  ; 0.409             ;
 ; clk_gen:inst5|div10_t:inst2|2 ; clk_gen:inst5|div10_t:inst2|3 ; 0.399             ;
-; clk_gen:inst5|div10_t:inst|3  ; clk_gen:inst5|div10_t:inst|1  ; 0.394             ;
+; clk_gen:inst5|div10_t:inst3|5 ; clk_gen:inst5|div10_t:inst3|1 ; 0.300             ;
 ; clk_gen:inst5|div10_t:inst1|5 ; clk_gen:inst5|div10_t:inst1|2 ; 0.298             ;
-; clk_gen:inst5|div10_t:inst3|5 ; clk_gen:inst5|div10_t:inst3|1 ; 0.262             ;
-; clk_gen:inst5|div10_t:inst|1  ; clk_gen:inst5|div10_t:inst|2  ; 0.097             ;
+; clk_gen:inst5|div10_t:inst|1  ; clk_gen:inst5|div10_t:inst|2  ; 0.095             ;
+; clk_gen:inst5|div10_t:inst3|1 ; clk_gen:inst5|div10_t:inst3|1 ; 0.011             ;
 +-------------------------------+-------------------------------+-------------------+
-Note: This table only shows the top 9 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 10 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (119006): Selected device 5CEFA2F23C8 for design "key_input"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -1250,7 +1244,7 @@ Info (332130): Timing requirements not specified -- quality metrics such as perf
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:05
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:06
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1259,26 +1253,26 @@ Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X33_Y0 to location X43_Y10
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 1.09 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.86 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
-Info (144001): Generated suppressed messages file C:/Users/G316/Desktop/DefuseBombVHDL/test/key_input/output_files/key_input.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/jiaaa/Desktop/Project/DefuseBombVHDL/test/key_input/output_files/key_input.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 1676 megabytes
-    Info: Processing ended: Wed May 20 18:03:50 2020
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Peak virtual memory: 5795 megabytes
+    Info: Processing ended: Thu May 21 14:09:34 2020
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:32
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/G316/Desktop/DefuseBombVHDL/test/key_input/output_files/key_input.fit.smsg.
+The suppressed messages can be found in C:/Users/jiaaa/Desktop/Project/DefuseBombVHDL/test/key_input/output_files/key_input.fit.smsg.
 
 
