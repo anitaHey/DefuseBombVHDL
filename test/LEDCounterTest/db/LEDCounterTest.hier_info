@@ -15,7 +15,7 @@ AA1 <= z[0].DB_MAX_OUTPUT_PORT_TYPE
 com_N20 <= <VCC>
 
 
-|LEDCounterTest|LEDFlashing:inst1
+|LEDCounterTest|LEDFlashing:inst12
 clk => op[0].CLK
 clk => op[1].CLK
 clk => op[2].CLK
@@ -28,6 +28,18 @@ clk => op[8].CLK
 clk => op[9].CLK
 clk => op[10].CLK
 clk => op[11].CLK
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
+running => op.OUTPUTSELECT
 z[0] <= op[0].DB_MAX_OUTPUT_PORT_TYPE
 z[1] <= op[1].DB_MAX_OUTPUT_PORT_TYPE
 z[2] <= op[2].DB_MAX_OUTPUT_PORT_TYPE

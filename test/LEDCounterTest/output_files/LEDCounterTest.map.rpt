@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LEDCounterTest
-Wed May 20 18:01:46 2020
+Fri May 22 13:53:09 2020
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,10 +13,11 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -42,13 +43,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 20 18:01:46 2020      ;
+; Analysis & Synthesis Status     ; Successful - Fri May 22 13:53:09 2020      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; LEDCounterTest                             ;
 ; Top-level Entity Name           ; LEDCounterTest                             ;
 ; Family                          ; Cyclone V                                  ;
 ; Logic utilization (in ALMs)     ; N/A                                        ;
-; Total registers                 ; 32                                         ;
+; Total registers                 ; 29                                         ;
 ; Total pins                      ; 14                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0                                          ;
@@ -167,16 +168,16 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                     ; Library ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------+---------+
-; LEDCounterTest.bdf               ; yes             ; User Block Diagram/Schematic File        ; C:/altera/13.1/LEDCounterTest/LEDCounterTest.bdf ;         ;
-; LEDFlashing.vhd                  ; yes             ; User VHDL File                           ; C:/altera/13.1/LEDCounterTest/LEDFlashing.vhd    ;         ;
-; clk_gen.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/altera/13.1/LEDCounterTest/clk_gen.bdf        ;         ;
-; div10_t.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/altera/13.1/LEDCounterTest/div10_t.bdf        ;         ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------------------+---------+
+; LEDCounterTest.bdf               ; yes             ; User Block Diagram/Schematic File        ; C:/Users/G316/Desktop/DefuseBombVHDL/test/LEDCounterTest/LEDCounterTest.bdf ;         ;
+; LEDFlashing.vhd                  ; yes             ; User VHDL File                           ; C:/Users/G316/Desktop/DefuseBombVHDL/test/LEDCounterTest/LEDFlashing.vhd    ;         ;
+; clk_gen.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/G316/Desktop/DefuseBombVHDL/test/LEDCounterTest/clk_gen.bdf        ;         ;
+; div10_t.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/G316/Desktop/DefuseBombVHDL/test/LEDCounterTest/div10_t.bdf        ;         ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------+
@@ -184,23 +185,23 @@ applicable agreement for further details.
 +---------------------------------------------+------------------------------+
 ; Resource                                    ; Usage                        ;
 +---------------------------------------------+------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 16                           ;
+; Estimate of Logic utilization (ALMs needed) ; 15                           ;
 ;                                             ;                              ;
-; Combinational ALUT usage for logic          ; 22                           ;
+; Combinational ALUT usage for logic          ; 28                           ;
 ;     -- 7 input functions                    ; 0                            ;
 ;     -- 6 input functions                    ; 0                            ;
 ;     -- 5 input functions                    ; 0                            ;
-;     -- 4 input functions                    ; 5                            ;
-;     -- <=3 input functions                  ; 17                           ;
+;     -- 4 input functions                    ; 7                            ;
+;     -- <=3 input functions                  ; 21                           ;
 ;                                             ;                              ;
-; Dedicated logic registers                   ; 32                           ;
+; Dedicated logic registers                   ; 29                           ;
 ;                                             ;                              ;
 ; I/O pins                                    ; 14                           ;
 ; Total DSP Blocks                            ; 0                            ;
-; Maximum fan-out node                        ; clk_gen:inst|div10_t:inst4|2 ;
-; Maximum fan-out                             ; 14                           ;
-; Total fan-out                               ; 147                          ;
-; Average fan-out                             ; 1.79                         ;
+; Maximum fan-out node                        ; clk_gen:inst|div10_t:inst5|2 ;
+; Maximum fan-out                             ; 6                            ;
+; Total fan-out                               ; 149                          ;
+; Average fan-out                             ; 1.75                         ;
 +---------------------------------------------+------------------------------+
 
 
@@ -209,16 +210,28 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Library Name ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------+--------------+
-; |LEDCounterTest            ; 22 (0)            ; 32 (0)       ; 0                 ; 0          ; 14   ; 0            ; |LEDCounterTest                            ; work         ;
-;    |LEDFlashing:inst1|     ; 2 (2)             ; 12 (12)      ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|LEDFlashing:inst1          ; work         ;
-;    |clk_gen:inst|          ; 20 (0)            ; 20 (0)       ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|clk_gen:inst               ; work         ;
+; |LEDCounterTest            ; 28 (0)            ; 29 (0)       ; 0                 ; 0          ; 14   ; 0            ; |LEDCounterTest                            ; work         ;
+;    |LEDFlashing:inst12|    ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|LEDFlashing:inst12         ; work         ;
+;    |clk_gen:inst|          ; 28 (0)            ; 28 (0)       ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|clk_gen:inst               ; work         ;
 ;       |div10_t:inst1|      ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|clk_gen:inst|div10_t:inst1 ; work         ;
 ;       |div10_t:inst2|      ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|clk_gen:inst|div10_t:inst2 ; work         ;
 ;       |div10_t:inst3|      ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|clk_gen:inst|div10_t:inst3 ; work         ;
 ;       |div10_t:inst4|      ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|clk_gen:inst|div10_t:inst4 ; work         ;
+;       |div10_t:inst5|      ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|clk_gen:inst|div10_t:inst5 ; work         ;
+;       |div10_t:inst6|      ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|clk_gen:inst|div10_t:inst6 ; work         ;
 ;       |div10_t:inst|       ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |LEDCounterTest|clk_gen:inst|div10_t:inst  ; work         ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; LEDFlashing:inst12|op[1..11]           ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 11 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -226,7 +239,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 32    ;
+; Total registers                              ; 29    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -241,7 +254,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; LEDFlashing:inst1|op[0]                ; 2       ;
+; LEDFlashing:inst12|op[0]               ; 1       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
@@ -261,7 +274,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed May 20 18:01:44 2020
+    Info: Processing started: Fri May 22 13:53:07 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LEDCounterTest -c LEDCounterTest
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file ledcountertest.bdf
@@ -269,8 +282,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file ledcoun
 Info (12021): Found 2 design units, including 1 entities, in source file ledflashing.vhd
     Info (12022): Found design unit 1: LEDFlashing-behavioral
     Info (12023): Found entity 1: LEDFlashing
+Info (12021): Found 2 design units, including 1 entities, in source file ledscore.vhd
+    Info (12022): Found design unit 1: LEDScore-behavioral
+    Info (12023): Found entity 1: LEDScore
 Info (12127): Elaborating entity "LEDCounterTest" for the top level hierarchy
-Info (12128): Elaborating entity "LEDFlashing" for hierarchy "LEDFlashing:inst1"
+Info (12128): Elaborating entity "LEDFlashing" for hierarchy "LEDFlashing:inst12"
 Warning (12125): Using design file clk_gen.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: clk_gen
 Info (12128): Elaborating entity "clk_gen" for hierarchy "clk_gen:inst"
@@ -278,17 +294,28 @@ Warning (12125): Using design file div10_t.bdf, which is not specified as a desi
     Info (12023): Found entity 1: div10_t
 Info (12128): Elaborating entity "div10_t" for hierarchy "clk_gen:inst|div10_t:inst3"
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "E2" is stuck at GND
+    Warning (13410): Pin "D3" is stuck at GND
+    Warning (13410): Pin "C2" is stuck at GND
+    Warning (13410): Pin "C1" is stuck at GND
+    Warning (13410): Pin "L2" is stuck at GND
+    Warning (13410): Pin "L1" is stuck at GND
+    Warning (13410): Pin "G2" is stuck at GND
+    Warning (13410): Pin "G1" is stuck at GND
+    Warning (13410): Pin "U2" is stuck at GND
+    Warning (13410): Pin "N1" is stuck at GND
+    Warning (13410): Pin "AA2" is stuck at GND
     Warning (13410): Pin "com_N20" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 46 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 43 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 32 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 614 megabytes
-    Info: Processing ended: Wed May 20 18:01:46 2020
+    Info (21061): Implemented 29 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 618 megabytes
+    Info: Processing ended: Fri May 22 13:53:09 2020
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

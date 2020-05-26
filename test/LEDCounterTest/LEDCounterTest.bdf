@@ -316,9 +316,9 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 896 232 1032 312)
+	(rect 880 232 1032 312)
 	(text "LEDFlashing" (rect 5 0 67 12)(font "Arial" ))
-	(text "inst1" (rect 8 64 31 76)(font "Arial" ))
+	(text "inst12" (rect 8 64 37 76)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -327,14 +327,38 @@ applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
-		(pt 136 32)
+		(pt 0 48)
+		(input)
+		(text "running" (rect 0 0 35 12)(font "Arial" ))
+		(text "running" (rect 21 43 56 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 152 32)
 		(output)
 		(text "z[11..0]" (rect 0 0 36 12)(font "Arial" ))
-		(text "z[11..0]" (rect 85 27 121 39)(font "Arial" ))
-		(line (pt 136 32)(pt 120 32)(line_width 3))
+		(text "z[11..0]" (rect 101 27 137 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 120 64))
+		(rectangle (rect 16 16 136 64))
+	)
+)
+(symbol
+	(rect 856 368 888 400)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst13" (rect 3 21 32 33)(font "Arial" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
 	)
 )
 (connector
@@ -471,16 +495,24 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 872 264)
+	(pt 864 312)
+	(pt 864 264)
+)
+(connector
+	(pt 848 312)
+	(pt 864 312)
+)
+(connector
+	(pt 864 264)
+	(pt 880 264)
+)
+(connector
+	(pt 880 280)
 	(pt 872 280)
 )
 (connector
-	(pt 848 280)
+	(pt 872 368)
 	(pt 872 280)
-)
-(connector
-	(pt 872 264)
-	(pt 896 264)
 )
 (junction (pt 1064 264))
 (junction (pt 1064 280))
