@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(5CEFA2F23) Path("C:/altera/13.1/LEDCounterTest/output_files/") File("LEDCounterTest.sof") MfrSpec(OpMask(1));
+		Device PartName(5CEFA2F23) Path("C:/Users/G316/Desktop/DefuseBombVHDL/test/LEDCounterTest/output_files/") File("LEDCounterTest.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

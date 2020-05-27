@@ -4,8 +4,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity LEDFlashing is
 	port (
-		clk : in std_logic;
-		z   : out std_logic_vector(11 downto 0) -- There are 12 LEDs
+		clk     : in std_logic;
+		running : in std_logic;  -- 1 = Running, 0 = Stop
+		z       : out std_logic_vector(11 downto 0) -- There are 12 LEDs
 	);
 end LEDFlashing;
 
@@ -16,8 +17,12 @@ begin
 	process(clk)
 	begin
 		if (rising_edge(clk)) then
-			-- Rotate right `op` by one bit.
-			op <= op(0) & op(11 downto 1);
+			if (running = '1') then
+				-- Rotate right `op` by one bit.
+				op <= op(0) & op(11 downto 1);
+			else
+				op <= "000000000000";
+			end if;
 		end if;
 	end process;
 	
