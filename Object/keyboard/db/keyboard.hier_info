@@ -10,6 +10,6 @@ num_out[0] <= save[0].DB_MAX_OUTPUT_PORT_TYPE
 num_out[1] <= save[1].DB_MAX_OUTPUT_PORT_TYPE
 num_out[2] <= save[2].DB_MAX_OUTPUT_PORT_TYPE
 num_out[3] <= save[3].DB_MAX_OUTPUT_PORT_TYPE
-valid_out <= valid_out$latch.DB_MAX_OUTPUT_PORT_TYPE
+valid_out <= notValid.DB_MAX_OUTPUT_PORT_TYPE
 
 

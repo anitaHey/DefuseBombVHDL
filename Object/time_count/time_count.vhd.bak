@@ -1,0 +1,26 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+
+entity LEDScore is
+	port (
+		clk : in  std_logic;  -- Must be 1Hz
+		out_time : out std_logic_vector(7 downto 0));
+	);
+end LEDScore;
+
+
+architecture behavioral of LEDScore is
+signal remaining_time : integer := 120;  -- in seconds
+begin
+	process(count_clk)
+	begin
+		if (rising_edge(count_clk)) then
+			-- Update remaining time.
+			if (running = '1' ) then
+				if(remaining_time > 0) then
+					remaining_time <= remaining_time - 1;
+				end if;
+		end if;
+	end process;
+end behavioral;

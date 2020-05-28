@@ -471,16 +471,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 968 208)
-	(pt 1032 208)
-	(bus)
-)
-(connector
-	(pt 560 192)
-	(pt 1032 192)
-	(bus)
-)
-(connector
 	(pt 512 296)
 	(pt 560 296)
 	(bus)
@@ -687,16 +677,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 968 280)
-	(pt 896 280)
-	(bus)
-)
-(connector
-	(pt 968 208)
-	(pt 968 280)
-	(bus)
-)
-(connector
 	(text "Column[2..0]" (rect 618 280 681 292)(font "Arial" ))
 	(pt 608 296)
 	(pt 688 296)
@@ -722,16 +702,32 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 896 296)
-	(pt 904 296)
-)
-(connector
 	(pt 256 336)
 	(pt 256 328)
 )
 (connector
 	(pt 256 328)
 	(pt 304 328)
+)
+(connector
+	(pt 560 192)
+	(pt 1032 192)
+	(bus)
+)
+(connector
+	(pt 928 208)
+	(pt 1032 208)
+	(bus)
+)
+(connector
+	(pt 928 208)
+	(pt 928 280)
+	(bus)
+)
+(connector
+	(pt 928 280)
+	(pt 896 280)
+	(bus)
 )
 (junction (pt 648 232))
 (junction (pt 704 176))

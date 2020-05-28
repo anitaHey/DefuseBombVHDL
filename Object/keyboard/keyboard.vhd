@@ -16,9 +16,9 @@ end keyboard;
 architecture a of keyboard is
 	signal num_in : std_logic_vector(5 downto 0);
 	signal notValid : std_logic := '0';
-	signal save : std_logic_vector(3 downto 0);
+	signal save : std_logic_vector(3 downto 0) := "1110";
 begin
-	process(num_in)
+	process(Row)
 	begin
 		if(valid_in = '1' and notValid='0') then
 			num_in <= Row & Column;
@@ -45,7 +45,7 @@ begin
 				when "110011" =>
 					save <= "1100";
 				when "110101" =>
-					save <= "0000";
+					save <= "0001";
 				when "110110" =>
 					save <= "1101";
 				when others =>
@@ -55,6 +55,7 @@ begin
 			valid_out <= notValid;
 			num_out <= save;
 		else
+			valid_out <= notValid;
 			num_out <= save;
 		end if;
 	end process;

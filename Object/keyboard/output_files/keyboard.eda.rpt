@@ -1,5 +1,5 @@
 EDA Netlist Writer report for keyboard
-Thu May 21 14:04:17 2020
+Fri May 22 22:41:40 2020
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu May 21 14:04:17 2020 ;
+; EDA Netlist Writer Status ; Successful - Fri May 22 22:41:40 2020 ;
 ; Revision Name             ; keyboard                              ;
 ; Top-level Entity Name     ; keyboard                              ;
 ; Family                    ; Cyclone V                             ;
@@ -65,13 +65,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                 ;
-+--------------------------------------------------------------------------------------------+
-; Generated Files                                                                            ;
-+--------------------------------------------------------------------------------------------+
-; C:/Users/jiaaa/Desktop/Project/DefuseBombVHDL/Object/keyboard/simulation/qsim//keyboard.vo ;
-+--------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Simulation Generated Files                                                     ;
++--------------------------------------------------------------------------------+
+; Generated Files                                                                ;
++--------------------------------------------------------------------------------+
+; D:/Desktop/Project/DefuseBombVHDL/Object/keyboard/simulation/qsim//keyboard.vo ;
++--------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -93,13 +93,13 @@ Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: programming logic devices manufactured by Altera and sold by 
     Info: Altera or its authorized distributors.  Please refer to the 
     Info: applicable agreement for further details.
-    Info: Processing started: Thu May 21 14:04:15 2020
-Info: Command: quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/jiaaa/Desktop/Project/DefuseBombVHDL/Object/keyboard/simulation/qsim/ keyboard -c keyboard
-Info (204019): Generated file keyboard.vo in folder "C:/Users/jiaaa/Desktop/Project/DefuseBombVHDL/Object/keyboard/simulation/qsim//" for EDA simulation tool
+    Info: Processing started: Fri May 22 22:41:39 2020
+Info: Command: quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=D:/Desktop/Project/DefuseBombVHDL/Object/keyboard/simulation/qsim/ keyboard -c keyboard
+Info (204019): Generated file keyboard.vo in folder "D:/Desktop/Project/DefuseBombVHDL/Object/keyboard/simulation/qsim//" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4637 megabytes
-    Info: Processing ended: Thu May 21 14:04:17 2020
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4633 megabytes
+    Info: Processing ended: Fri May 22 22:41:40 2020
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

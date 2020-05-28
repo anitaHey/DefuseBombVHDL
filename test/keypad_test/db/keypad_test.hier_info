@@ -1,0 +1,325 @@
+|keypad_test
+DE1 <= row[2].DB_MAX_OUTPUT_PORT_TYPE
+CLK => clk_gen:inst1.clock
+RK1 => keypad:inst.col[0]
+RK2 => keypad:inst.col[1]
+RK3 => keypad:inst.col[2]
+DE2 <= row[1].DB_MAX_OUTPUT_PORT_TYPE
+DE3 <= row[0].DB_MAX_OUTPUT_PORT_TYPE
+A <= seg_data[0].DB_MAX_OUTPUT_PORT_TYPE
+B <= seg_data[1].DB_MAX_OUTPUT_PORT_TYPE
+C <= seg_data[2].DB_MAX_OUTPUT_PORT_TYPE
+D <= seg_data[3].DB_MAX_OUTPUT_PORT_TYPE
+E <= seg_data[4].DB_MAX_OUTPUT_PORT_TYPE
+F <= seg_data[5].DB_MAX_OUTPUT_PORT_TYPE
+G <= seg_data[6].DB_MAX_OUTPUT_PORT_TYPE
+DP <= seg_data[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|keypad_test|keypad:inst
+clk_1k => keypad_scan:keyin.clk_1k
+clk => d_7seg:disp.clk
+col[0] => keypad_scan:keyin.col[0]
+col[1] => keypad_scan:keyin.col[1]
+col[2] => keypad_scan:keyin.col[2]
+row[0] <= keypad_scan:keyin.row[0]
+row[1] <= keypad_scan:keyin.row[1]
+row[2] <= keypad_scan:keyin.row[2]
+seg_com[0] <= d_7seg:disp.seg_com[0]
+seg_com[1] <= d_7seg:disp.seg_com[1]
+seg_com[2] <= d_7seg:disp.seg_com[2]
+code_k[0] <= keypad_scan:keyin.code_k[0]
+code_k[1] <= keypad_scan:keyin.code_k[1]
+code_k[2] <= keypad_scan:keyin.code_k[2]
+code_k[3] <= keypad_scan:keyin.code_k[3]
+seg_data[0] <= d_7seg:disp.seg_data[0]
+seg_data[1] <= d_7seg:disp.seg_data[1]
+seg_data[2] <= d_7seg:disp.seg_data[2]
+seg_data[3] <= d_7seg:disp.seg_data[3]
+seg_data[4] <= d_7seg:disp.seg_data[4]
+seg_data[5] <= d_7seg:disp.seg_data[5]
+seg_data[6] <= d_7seg:disp.seg_data[6]
+seg_data[7] <= d_7seg:disp.seg_data[7]
+
+
+|keypad_test|keypad:inst|keypad_scan:keyin
+clk_1k => t1.CLK
+clk_1k => k[11].CLK
+clk_1k => k[10].CLK
+clk_1k => k[0].CLK
+clk_1k => k[9].CLK
+clk_1k => k[8].CLK
+clk_1k => k[7].CLK
+clk_1k => k[6].CLK
+clk_1k => k[5].CLK
+clk_1k => k[4].CLK
+clk_1k => k[3].CLK
+clk_1k => k[2].CLK
+clk_1k => k[1].CLK
+clk_1k => row[0]~reg0.CLK
+clk_1k => row[1]~reg0.CLK
+clk_1k => row[2]~reg0.CLK
+clk_1k => scan[0].CLK
+clk_1k => scan[1].CLK
+col[0] => k[10].DATAIN
+col[0] => k[7].DATAIN
+col[0] => k[4].DATAIN
+col[0] => k[1].DATAIN
+col[1] => k[0].DATAIN
+col[1] => k[8].DATAIN
+col[1] => k[5].DATAIN
+col[1] => k[2].DATAIN
+col[2] => k[11].DATAIN
+col[2] => k[9].DATAIN
+col[2] => k[6].DATAIN
+col[2] => k[3].DATAIN
+row[0] <= row[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+row[1] <= row[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+row[2] <= row[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+strobe <= strobe.DB_MAX_OUTPUT_PORT_TYPE
+code_k[0] <= code_k.DB_MAX_OUTPUT_PORT_TYPE
+code_k[1] <= code_k.DB_MAX_OUTPUT_PORT_TYPE
+code_k[2] <= code_k.DB_MAX_OUTPUT_PORT_TYPE
+code_k[3] <= code_k.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|keypad_test|keypad:inst|d_7seg:disp
+clk => scan[0].CLK
+clk => scan[1].CLK
+d0[0] => Equal1.IN9
+d0[0] => Equal2.IN9
+d0[0] => Equal3.IN9
+d0[0] => Equal4.IN9
+d0[0] => Equal5.IN9
+d0[0] => Equal6.IN9
+d0[0] => Equal7.IN9
+d0[0] => Equal8.IN9
+d0[0] => Equal9.IN9
+d0[0] => Equal10.IN9
+d0[1] => Equal1.IN8
+d0[1] => Equal2.IN8
+d0[1] => Equal3.IN8
+d0[1] => Equal4.IN8
+d0[1] => Equal5.IN8
+d0[1] => Equal6.IN8
+d0[1] => Equal7.IN8
+d0[1] => Equal8.IN8
+d0[1] => Equal9.IN8
+d0[1] => Equal10.IN8
+d0[2] => Equal1.IN7
+d0[2] => Equal2.IN7
+d0[2] => Equal3.IN7
+d0[2] => Equal4.IN7
+d0[2] => Equal5.IN7
+d0[2] => Equal6.IN7
+d0[2] => Equal7.IN7
+d0[2] => Equal8.IN7
+d0[2] => Equal9.IN7
+d0[2] => Equal10.IN7
+d0[3] => Equal1.IN6
+d0[3] => Equal2.IN6
+d0[3] => Equal3.IN6
+d0[3] => Equal4.IN6
+d0[3] => Equal5.IN6
+d0[3] => Equal6.IN6
+d0[3] => Equal7.IN6
+d0[3] => Equal8.IN6
+d0[3] => Equal9.IN6
+d0[3] => Equal10.IN6
+d1[0] => Equal11.IN9
+d1[0] => Equal12.IN9
+d1[0] => Equal13.IN9
+d1[0] => Equal14.IN9
+d1[0] => Equal15.IN9
+d1[0] => Equal16.IN9
+d1[0] => Equal17.IN9
+d1[0] => Equal18.IN9
+d1[0] => Equal19.IN9
+d1[0] => Equal20.IN9
+d1[1] => Equal11.IN8
+d1[1] => Equal12.IN8
+d1[1] => Equal13.IN8
+d1[1] => Equal14.IN8
+d1[1] => Equal15.IN8
+d1[1] => Equal16.IN8
+d1[1] => Equal17.IN8
+d1[1] => Equal18.IN8
+d1[1] => Equal19.IN8
+d1[1] => Equal20.IN8
+d1[2] => Equal11.IN7
+d1[2] => Equal12.IN7
+d1[2] => Equal13.IN7
+d1[2] => Equal14.IN7
+d1[2] => Equal15.IN7
+d1[2] => Equal16.IN7
+d1[2] => Equal17.IN7
+d1[2] => Equal18.IN7
+d1[2] => Equal19.IN7
+d1[2] => Equal20.IN7
+d1[3] => Equal11.IN6
+d1[3] => Equal12.IN6
+d1[3] => Equal13.IN6
+d1[3] => Equal14.IN6
+d1[3] => Equal15.IN6
+d1[3] => Equal16.IN6
+d1[3] => Equal17.IN6
+d1[3] => Equal18.IN6
+d1[3] => Equal19.IN6
+d1[3] => Equal20.IN6
+d2[0] => Equal21.IN9
+d2[0] => Equal22.IN9
+d2[0] => Equal23.IN9
+d2[0] => Equal24.IN9
+d2[0] => Equal25.IN9
+d2[0] => Equal26.IN9
+d2[0] => Equal27.IN9
+d2[0] => Equal28.IN9
+d2[0] => Equal29.IN9
+d2[0] => Equal30.IN9
+d2[1] => Equal21.IN8
+d2[1] => Equal22.IN8
+d2[1] => Equal23.IN8
+d2[1] => Equal24.IN8
+d2[1] => Equal25.IN8
+d2[1] => Equal26.IN8
+d2[1] => Equal27.IN8
+d2[1] => Equal28.IN8
+d2[1] => Equal29.IN8
+d2[1] => Equal30.IN8
+d2[2] => Equal21.IN7
+d2[2] => Equal22.IN7
+d2[2] => Equal23.IN7
+d2[2] => Equal24.IN7
+d2[2] => Equal25.IN7
+d2[2] => Equal26.IN7
+d2[2] => Equal27.IN7
+d2[2] => Equal28.IN7
+d2[2] => Equal29.IN7
+d2[2] => Equal30.IN7
+d2[3] => Equal21.IN6
+d2[3] => Equal22.IN6
+d2[3] => Equal23.IN6
+d2[3] => Equal24.IN6
+d2[3] => Equal25.IN6
+d2[3] => Equal26.IN6
+d2[3] => Equal27.IN6
+d2[3] => Equal28.IN6
+d2[3] => Equal29.IN6
+d2[3] => Equal30.IN6
+d3[0] => Equal31.IN9
+d3[0] => Equal32.IN9
+d3[0] => Equal33.IN9
+d3[0] => Equal34.IN9
+d3[0] => Equal35.IN9
+d3[0] => Equal36.IN9
+d3[0] => Equal37.IN9
+d3[0] => Equal38.IN9
+d3[0] => Equal39.IN9
+d3[0] => Equal40.IN9
+d3[1] => Equal31.IN8
+d3[1] => Equal32.IN8
+d3[1] => Equal33.IN8
+d3[1] => Equal34.IN8
+d3[1] => Equal35.IN8
+d3[1] => Equal36.IN8
+d3[1] => Equal37.IN8
+d3[1] => Equal38.IN8
+d3[1] => Equal39.IN8
+d3[1] => Equal40.IN8
+d3[2] => Equal31.IN7
+d3[2] => Equal32.IN7
+d3[2] => Equal33.IN7
+d3[2] => Equal34.IN7
+d3[2] => Equal35.IN7
+d3[2] => Equal36.IN7
+d3[2] => Equal37.IN7
+d3[2] => Equal38.IN7
+d3[2] => Equal39.IN7
+d3[2] => Equal40.IN7
+d3[3] => Equal31.IN6
+d3[3] => Equal32.IN6
+d3[3] => Equal33.IN6
+d3[3] => Equal34.IN6
+d3[3] => Equal35.IN6
+d3[3] => Equal36.IN6
+d3[3] => Equal37.IN6
+d3[3] => Equal38.IN6
+d3[3] => Equal39.IN6
+d3[3] => Equal40.IN6
+seg_com[0] <= <GND>
+seg_com[1] <= scan[1].DB_MAX_OUTPUT_PORT_TYPE
+seg_com[2] <= scan[0].DB_MAX_OUTPUT_PORT_TYPE
+seg_data[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+seg_data[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg_data[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seg_data[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seg_data[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg_data[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg_data[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg_data[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|keypad_test|clk_gen:inst1
+1KHz <= div10_t:inst3.CLK_out
+clock => div10_t:inst.CLK
+100Hz <= div10_t:inst4.CLK_out
+10Hz <= div10_t:inst5.CLK_out
+1Hz <= div10_t:inst6.CLK_out
+
+
+|keypad_test|clk_gen:inst1|div10_t:inst3
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|keypad_test|clk_gen:inst1|div10_t:inst2
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|keypad_test|clk_gen:inst1|div10_t:inst1
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|keypad_test|clk_gen:inst1|div10_t:inst
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|keypad_test|clk_gen:inst1|div10_t:inst4
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|keypad_test|clk_gen:inst1|div10_t:inst5
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|keypad_test|clk_gen:inst1|div10_t:inst6
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+

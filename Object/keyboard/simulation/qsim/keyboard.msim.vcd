@@ -3,7 +3,7 @@ $comment
 		vcd file keyboard.msim.vcd -direction
 $end
 $date
-	Thu May 21 14:04:18 2020
+	Fri May 22 22:41:41 2020
 $end
 $version
 	ModelSim Version 10.1d
@@ -37,22 +37,22 @@ $var wire 1 5 Mux4~0_combout $end
 $var wire 1 6 notValid~combout $end
 $var wire 1 7 valid_in~input_o $end
 $var wire 1 8 process_0~0_combout $end
-$var wire 1 9 Row[1]~input_o $end
-$var wire 1 : Row[2]~input_o $end
+$var wire 1 9 Row[2]~input_o $end
+$var wire 1 : Row[1]~input_o $end
 $var wire 1 ; Mux3~0_combout $end
 $var wire 1 < Mux2~0_combout $end
 $var wire 1 = Mux1~0_combout $end
 $var wire 1 > Mux0~0_combout $end
-$var wire 1 ? num_in [5] $end
-$var wire 1 @ num_in [4] $end
-$var wire 1 A num_in [3] $end
-$var wire 1 B num_in [2] $end
-$var wire 1 C num_in [1] $end
-$var wire 1 D num_in [0] $end
-$var wire 1 E save [3] $end
-$var wire 1 F save [2] $end
-$var wire 1 G save [1] $end
-$var wire 1 H save [0] $end
+$var wire 1 ? save [3] $end
+$var wire 1 @ save [2] $end
+$var wire 1 A save [1] $end
+$var wire 1 B save [0] $end
+$var wire 1 C num_in [5] $end
+$var wire 1 D num_in [4] $end
+$var wire 1 E num_in [3] $end
+$var wire 1 F num_in [2] $end
+$var wire 1 G num_in [1] $end
+$var wire 1 H num_in [0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -88,191 +88,156 @@ x,
 1<
 1=
 1>
+0B
+xA
+x@
+x?
+0H
+0G
+0F
+0E
 0D
 0C
-0B
-0A
-0@
-0?
-0H
-xG
-xF
-xE
 $end
 #50000
 b10 !
 b11 !
-1#
 12
 13
-17
 0)
+#100000
+b1 !
+b0 !
+02
+03
+1)
+#150000
+b10 !
+b11 !
+12
+13
+0)
+#200000
+b1 !
+b0 !
+02
+03
+1)
+#250000
+b10 !
+b11 !
+12
+13
+0)
+#300000
+b1 !
+b0 !
+02
+03
+1)
+#350000
+b10 !
+b11 !
+12
+13
+0)
+#400000
+b1 !
+b0 !
+02
+03
+1)
+#450000
+b10 !
+b11 !
+12
+13
+0)
+#500000
+1#
+b1 !
+b0 !
+17
+02
+03
+1)
 18
-1D
-1C
+1A
+1@
+1?
+1&
+1%
+1$
+#550000
+b10 !
+b11 !
+12
+13
+0)
+1H
 1G
-1F
-1E
 15
 1;
 0<
 0=
 0>
-1&
-1%
-1$
 16
-1H
-0G
-0F
-0E
+1B
+0A
+0@
+0?
 08
+1(
 1'
 0&
 0%
 0$
-#100000
-b1 !
-b0 !
-0#
-02
-03
-07
-1)
-#150000
-b10 !
-b11 !
-1#
-12
-13
-17
-0)
-#200000
-b1 !
-b0 !
-0#
-02
-03
-07
-1)
-#250000
-b10 !
-b11 !
-1#
-12
-13
-17
-0)
-#300000
-b1 !
-b0 !
-0#
-02
-03
-07
-1)
-#350000
-b10 !
-b11 !
-1#
-12
-13
-17
-0)
-#400000
-b1 !
-b0 !
-0#
-02
-03
-07
-1)
-#450000
-b10 !
-b11 !
-1#
-12
-13
-17
-0)
-#500000
-b1 !
-b0 !
-0#
-02
-03
-07
-1)
-#550000
-b10 !
-b11 !
-1#
-12
-13
-17
-0)
 #600000
 b1 !
 b0 !
-0#
 02
 03
-07
 1)
 #650000
 b10 !
 b11 !
-1#
 12
 13
-17
 0)
 #700000
 b1 !
 b0 !
-0#
 02
 03
-07
 1)
 #750000
 b10 !
 b11 !
-1#
 12
 13
-17
 0)
 #800000
 b1 !
 b0 !
-0#
 02
 03
-07
 1)
 #850000
 b10 !
 b11 !
-1#
 12
 13
-17
 0)
 #900000
 b1 !
 b0 !
-0#
 02
 03
-07
 1)
 #950000
 b10 !
 b11 !
-1#
 12
 13
-17
 0)
 #1000000

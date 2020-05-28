@@ -1,0 +1,257 @@
+--------------------------------------------------------
+-- Filename: keypad.vhd
+--
+-- Description:
+--				This is the VHDL block that contains the keypad logic.
+--
+-- Name: 	Curtis Wickman
+-- E-mail:  wickman@ee.ualberta.ca
+-- ID:		231237
+-- Project: Imaginary Caclulator
+--
+-- Date: 	16/02/98
+--------------------------------------------------------
+-- Functional Description
+--
+--  The keypad works with drive and sense lines.  
+--  The rows are the sense lines.
+--  The columns are the drive lines.
+--  Each of the four sense lines is pulled up with a 10kohm 
+--  	resister.
+--  The drive lines drive all '0' and once a sense of '0' is
+--      seen then we know that a key has been pressed.
+--  Once the key has been pressed then a '1' bit is shifted through all
+--      of the drive lines.  
+--  Then once the sense lines goes high again then we know which key
+--      was pressed.  
+--  The key is then registed using the keydetected signal.
+--  Then the kaypad logic waits for the key to be released and for a signal
+--      to continue normal operation.      
+--
+--  If you have any questions about this application note then please e-mail me.
+--
+--------------------------------------------------------
+
+------------------------------------------------------------------------
+--  keypad
+------------------------------------------------------------------------
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+
+ENTITY keypad IS
+	PORT(
+		clk								: IN	STD_LOGIC;
+		reset							: IN	STD_LOGIC;
+		Continue						: IN	STD_LOGIC;
+		KeyDetected						: OUT 	STD_LOGIC;
+
+		KeyData							: OUT STD_LOGIC_VECTOR(3 downto 0);
+
+		-- External Signals
+		Row								: IN STD_LOGIC_VECTOR(3 downto 0);
+		Col								: OUT STD_LOGIC_VECTOR(3 downto 0)
+);
+END keypad;
+
+ARCHITECTURE behavioural OF keypad IS
+
+	TYPE STATE_TYPE IS (NoKey, Drive0, Drive1, Drive2, Drive4, Drive8, FoundKey,
+						Debounce, RegisterKey, WaitForRelease, KeyRelease);
+	SIGNAL state      : STATE_TYPE;
+
+	SIGNAL stateDrive : STATE_TYPE;
+
+	SIGNAL Sense : STD_LOGIC;
+
+	SIGNAL Key					:STD_LOGIC_VECTOR(3 downto 0);
+	SIGNAL RowInt				:STD_LOGIC_VECTOR(3 downto 0);
+	SIGNAL IntCack				:STD_LOGIC;
+
+BEGIN
+
+	-- Latch the inputs
+	InternalRow: PROCESS IS
+	BEGIN
+		IF(falling_edge(clk)) THEN
+			RowInt <= Row;
+		END IF;
+	END PROCESS InternalRow;
+
+	-- Create the sense signal.
+	SenseDetect: PROCESS IS
+	BEGIN		
+		Sense <= (RowInt(0) AND RowInt(1)) AND (RowInt(2) AND RowInt(3));
+	END PROCESS SenseDetect;
+
+
+	-- This is the state that handles all of the state machine.
+	StateLogic : PROCESS (clk)
+	BEGIN
+
+		IF reset = '1' THEN
+			state <= NoKey;
+			stateDrive <= Drive0;
+		ELSIF rising_edge(clk) THEN
+			CASE state IS
+				WHEN NoKey =>
+					IF Sense = '0' THEN
+						state <= Drive1;
+						stateDrive <= Drive1;
+					END IF;
+
+				WHEN Drive1 =>
+					IF Sense = '0' THEN
+						state <= Drive2;
+						stateDrive <= Drive2;
+					ELSE
+						state <= FoundKey;				
+					END IF;
+
+
+				WHEN Drive2 =>
+					IF Sense = '0' THEN
+						state <= Drive4;
+						stateDrive <= Drive4;
+					ELSE
+						state <= FoundKey;				
+					END IF;
+
+
+				WHEN Drive4 =>
+					IF Sense = '0' THEN
+						state <= Drive8;
+						stateDrive <= Drive8;
+					ELSE
+						state <= FoundKey;				
+					END IF;
+
+
+				WHEN Drive8 =>
+					IF Sense = '0' THEN
+						state <= KeyRelease;
+					ELSE
+						state <= FoundKey;				
+					END IF;
+
+
+	      		WHEN FoundKey =>
+					IF Sense = '1' THEN
+						state <= KeyRelease;
+					ELSE
+						state <= DeBounce;
+					END IF;
+
+	      		WHEN DeBounce =>
+					IF Sense = '1' THEN
+						state <= KeyRelease;
+					ELSE
+						state <= RegisterKey;
+						stateDrive <= Drive0;
+					END IF;
+	      
+				WHEN RegisterKey =>
+					IF Continue = '1' THEN
+						state <= WaitForRelease;
+					END IF;
+
+	      		WHEN WaitForRelease =>
+					Key <= "0000";
+					stateDrive <= Drive0;
+					IF Sense = '1' and Continue = '0' THEN
+						state <= KeyRelease;
+					END IF;
+			
+				WHEN KeyRelease =>
+					stateDrive <= Drive0;
+					state <= NoKey;
+
+				WHEN OTHERS =>
+					state <= NoKey;
+
+
+			END CASE;
+
+
+			-- Button numbers for the keypad
+			-- 0  1  2  3
+			-- 4  5  6  7 
+			-- 8  9  10 11
+			-- 12 13 14 15
+		
+			-- This case determines what key has been pressed 
+			-- based on the drive and the row.
+			CASE stateDrive IS
+
+				WHEN Drive0 =>
+					-- Do nothing.
+				WHEN Drive1 =>
+					IF 	RowInt(0) = '0' THEN
+						Key <= "0000"; -- Key 0
+					ELSIF RowInt(1) = '0' THEN
+						Key <= "0100"; --Key 4
+					ELSIF RowInt(2) = '0' THEN
+						Key <= "1000"; -- Key 8
+					ELSIF RowInt(3) = '0' THEN
+						Key <= "1100"; -- Key 12
+					end if;
+						
+				WHEN Drive2 =>
+					if 	RowInt(0) = '0' THEN
+						Key <= "0001"; -- 1
+					ELSIF RowInt(1) = '0' THEN
+						Key <= "0101"; -- 5
+					ELSIF RowInt(2) = '0' THEN
+						Key <= "1001"; -- 9
+					ELSIF RowInt(3) = '0' THEN
+						Key <= "1101"; -- 13
+					end if;
+
+				WHEN Drive4 =>
+					if 	RowInt(0) = '0' THEN
+						Key <= "0010"; -- 2
+					ELSIF RowInt(1) = '0' THEN
+						Key <= "0110"; --6
+					ELSIF RowInt(2) = '0' THEN
+						Key <= "1010"; -- 10
+					ELSIF RowInt(3) = '0' THEN
+						Key <= "1110"; -- 14
+					END IF;
+
+				WHEN Drive8 =>
+					IF 	RowInt(0) = '0' THEN
+						Key <= "0011"; -- 3
+					ELSIF RowInt(1) = '0' THEN
+						Key <= "0111"; -- 7
+					ELSIF RowInt(2) = '0' THEN
+						Key <= "1011"; -- 11
+					ELSIF RowInt(3) = '0' THEN
+						Key <= "1111"; -- 15
+					END IF;
+	
+				WHEN OTHERS =>
+					stateDrive <= Drive0;
+			END CASE;
+		END IF;
+	END PROCESS StateLogic;
+
+---------- Send the key to the output when the Register key state is found
+Outputs: PROCESS
+BEGIN
+		IF(state = RegisterKey) THEN
+ 			KeyData <= Key;
+			KeyDetected <= '1';
+		ELSE
+ 			KeyData <= "0000";
+			KeyDetected <= '0';
+		END IF;
+END PROCESS Outputs;
+
+
+-- Base the dive on the state of the system.
+WITH state SELECT
+	Col 	<=	"0001"	WHEN	Drive1,
+				"0010"	WHEN	Drive2,
+				"0100"	WHEN	Drive4,
+				"1000"	WHEN	Drive8,
+				"0000"	WHEN OTHERS;				
+END behavioural;

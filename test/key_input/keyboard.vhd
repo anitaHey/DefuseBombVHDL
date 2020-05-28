@@ -16,42 +16,48 @@ end keyboard;
 architecture a of keyboard is
 	signal num_in : std_logic_vector(5 downto 0);
 	signal notValid : std_logic := '0';
-	signal save : std_logic_vector(3 downto 0);
+	signal save : std_logic_vector(3 downto 0) := "1110";
 begin
-	process(num_in)
+	process(Row)
 	begin
 		if(valid_in = '1' and notValid='0') then
-			num_in <= Row & Column;
-			notValid <= '1';
-	 		case num_in is
-	 			when "000011" =>
-	 				save <= "0001";
-	 			when "000101" =>
-	 				save <= "0010";
-	 			when "000110" =>
-	 				save <= "0011";
-	 			when "100011" =>
-	  				save <= "0100";
-	 			when "100101" =>
-	 				save <= "0101";
-	 			when "100110" =>
-	 				save <= "0110";
-	 			when "010011" =>
-	 				save <= "0111";
-	 			when "010101" =>
-					save <= "1000";
-				when "010110" =>
-					save <= "1001";
-				when "110011" =>
-					save <= "1100";
-				when "110101" =>
-					save <= "0000";
-				when "110110" =>
-					save <= "1101";
-				when others =>
-					save <= "1110";
-					notValid <= '0';
-			end case;
+			if(Column = "011" or Column = "101" or Column = "110") then
+				num_in <= Row & Column;
+				notValid <= '1';
+				
+				case num_in is
+					when "000011" =>
+						save <= "0001";
+					when "000101" =>
+						save <= "0010";
+					when "000110" =>
+						save <= "0011";
+					when "100011" =>
+						save <= "0100";
+					when "100101" =>
+						save <= "0101";
+					when "100110" =>
+						save <= "0110";
+					when "010011" =>
+						save <= "0111";
+					when "010101" =>
+						save <= "1000";
+					when "010110" =>
+						save <= "1001";
+					when "110011" =>
+						save <= "1100";
+					when "110101" =>
+						save <= "0000";
+					when "110110" =>
+						save <= "1101";
+					when others =>
+						save <= "1110";
+						notValid <= '0';
+				end case;
+			else
+				save <= "1110";
+			end if;
+
 			valid_out <= notValid;
 			num_out <= save;
 		else
