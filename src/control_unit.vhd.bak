@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity control_unit is
+	port(
+		sw_in   : in std_logic_vector(3 downto 0); -- sw1, sw2, sw3, sw4
+		pulse   : in std_logic;
+		num_out : out std_logic_vector(3 downto 0));
+end control_unit;
+
+architecture Behavioral of control_unit is
+signal current : integer := 1;
+signal num_1 : std_logic_vector(3 downto 0) := "0000";
+signal num_2 : std_logic_vector(3 downto 0) := "0000";
+signal num_3 : std_logic_vector(3 downto 0) := "0000";
+signal num_4 : std_logic_vector(3 downto 0) := "0000";
+begin
+	process(pulse)
+		num_1 <= sw_in;
+	end process;
+	
+	num_out <= sw_in;
+end Behavioral;
