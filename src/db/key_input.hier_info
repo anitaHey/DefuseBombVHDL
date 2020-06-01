@@ -1,0 +1,371 @@
+|key_input
+A <= num_out[6].DB_MAX_OUTPUT_PORT_TYPE
+pulse => debounce_g:inst2.Key_in
+clk => clk_gen:inst5.clock
+sw1 => control_unit:inst17.sw_in[3]
+sw2 => control_unit:inst17.sw_in[2]
+sw3 => control_unit:inst17.sw_in[1]
+sw4 => control_unit:inst17.sw_in[0]
+B <= num_out[5].DB_MAX_OUTPUT_PORT_TYPE
+C <= num_out[4].DB_MAX_OUTPUT_PORT_TYPE
+D <= num_out[3].DB_MAX_OUTPUT_PORT_TYPE
+E <= num_out[2].DB_MAX_OUTPUT_PORT_TYPE
+F <= num_out[1].DB_MAX_OUTPUT_PORT_TYPE
+G <= num_out[0].DB_MAX_OUTPUT_PORT_TYPE
+de_out2 <= de[1].DB_MAX_OUTPUT_PORT_TYPE
+de_out1 <= de[2].DB_MAX_OUTPUT_PORT_TYPE
+de_out3 <= de[0].DB_MAX_OUTPUT_PORT_TYPE
+E2 <= z[11].DB_MAX_OUTPUT_PORT_TYPE
+D3 <= z[10].DB_MAX_OUTPUT_PORT_TYPE
+C2 <= z[9].DB_MAX_OUTPUT_PORT_TYPE
+C1 <= z[8].DB_MAX_OUTPUT_PORT_TYPE
+L2 <= z[7].DB_MAX_OUTPUT_PORT_TYPE
+L1 <= z[6].DB_MAX_OUTPUT_PORT_TYPE
+G2 <= z[5].DB_MAX_OUTPUT_PORT_TYPE
+G1 <= z[4].DB_MAX_OUTPUT_PORT_TYPE
+U2 <= z[3].DB_MAX_OUTPUT_PORT_TYPE
+N1 <= z[2].DB_MAX_OUTPUT_PORT_TYPE
+AA2 <= z[1].DB_MAX_OUTPUT_PORT_TYPE
+AA1 <= z[0].DB_MAX_OUTPUT_PORT_TYPE
+com_N20 <= <VCC>
+
+
+|key_input|seg7:inst
+num1_in[0] => Mux7.IN4
+num1_in[1] => Mux9.IN4
+num1_in[2] => Mux10.IN4
+num1_in[3] => Mux11.IN4
+num2_in[0] => Mux7.IN5
+num2_in[1] => Mux9.IN5
+num2_in[2] => Mux10.IN5
+num2_in[3] => Mux11.IN5
+num3_in[0] => Mux7.IN6
+num3_in[1] => Mux9.IN6
+num3_in[2] => Mux10.IN6
+num3_in[3] => Mux11.IN6
+num4_in[0] => Mux7.IN7
+num4_in[1] => Mux9.IN7
+num4_in[2] => Mux10.IN7
+num4_in[3] => Mux11.IN7
+row_in[0] => Mux7.IN10
+row_in[0] => Mux8.IN10
+row_in[0] => Mux9.IN10
+row_in[0] => Mux10.IN10
+row_in[0] => Mux11.IN10
+row_in[1] => Mux7.IN9
+row_in[1] => Mux8.IN9
+row_in[1] => Mux9.IN9
+row_in[1] => Mux10.IN9
+row_in[1] => Mux11.IN9
+row_in[2] => Mux7.IN8
+row_in[2] => Mux8.IN8
+row_in[2] => Mux9.IN8
+row_in[2] => Mux10.IN8
+row_in[2] => Mux11.IN8
+num_out[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+num_out[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+num_out[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+num_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+num_out[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+num_out[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+num_out[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|key_input|control_unit:inst17
+sw_in[0] => num_1[0].DATAIN
+sw_in[0] => num_2[0].DATAIN
+sw_in[0] => num_3[0].DATAIN
+sw_in[0] => num_4[0].DATAIN
+sw_in[1] => num_1[1].DATAIN
+sw_in[1] => num_2[1].DATAIN
+sw_in[1] => num_3[1].DATAIN
+sw_in[1] => num_4[1].DATAIN
+sw_in[2] => num_1[2].DATAIN
+sw_in[2] => num_2[2].DATAIN
+sw_in[2] => num_3[2].DATAIN
+sw_in[2] => num_4[2].DATAIN
+sw_in[3] => num_1[3].DATAIN
+sw_in[3] => num_2[3].DATAIN
+sw_in[3] => num_3[3].DATAIN
+sw_in[3] => num_4[3].DATAIN
+pulse => num_current[0].CLK
+pulse => num_current[1].CLK
+pulse => num_current[2].CLK
+pulse => num_current[3].CLK
+pulse => num_current[4].CLK
+pulse => num_current[5].CLK
+pulse => num_current[6].CLK
+pulse => num_current[7].CLK
+pulse => num_current[8].CLK
+pulse => num_current[9].CLK
+pulse => num_current[10].CLK
+pulse => num_current[11].CLK
+pulse => num_current[12].CLK
+pulse => num_current[13].CLK
+pulse => num_current[14].CLK
+pulse => num_current[15].CLK
+pulse => num_current[16].CLK
+pulse => num_current[17].CLK
+pulse => num_current[18].CLK
+pulse => num_current[19].CLK
+pulse => num_current[20].CLK
+pulse => num_current[21].CLK
+pulse => num_current[22].CLK
+pulse => num_current[23].CLK
+pulse => num_current[24].CLK
+pulse => num_current[25].CLK
+pulse => num_current[26].CLK
+pulse => num_current[27].CLK
+pulse => num_current[28].CLK
+pulse => num_current[29].CLK
+pulse => num_current[30].CLK
+pulse => num_current[31].CLK
+pulse => led_state[0].CLK
+pulse => led_state[1].CLK
+pulse => game_state[0].CLK
+pulse => game_state[1].CLK
+pulse => game_state[2].CLK
+pulse => game_state[3].CLK
+pulse => game_state[4].CLK
+pulse => game_state[5].CLK
+pulse => game_state[6].CLK
+pulse => game_state[7].CLK
+pulse => game_state[8].CLK
+pulse => game_state[9].CLK
+pulse => game_state[10].CLK
+pulse => game_state[11].CLK
+pulse => game_state[12].CLK
+pulse => game_state[13].CLK
+pulse => game_state[14].CLK
+pulse => game_state[15].CLK
+pulse => game_state[16].CLK
+pulse => game_state[17].CLK
+pulse => game_state[18].CLK
+pulse => game_state[19].CLK
+pulse => game_state[20].CLK
+pulse => game_state[21].CLK
+pulse => game_state[22].CLK
+pulse => game_state[23].CLK
+pulse => game_state[24].CLK
+pulse => game_state[25].CLK
+pulse => game_state[26].CLK
+pulse => game_state[27].CLK
+pulse => game_state[28].CLK
+pulse => game_state[29].CLK
+pulse => game_state[30].CLK
+pulse => game_state[31].CLK
+num1_out[0] <= num_1[0].DB_MAX_OUTPUT_PORT_TYPE
+num1_out[1] <= num_1[1].DB_MAX_OUTPUT_PORT_TYPE
+num1_out[2] <= num_1[2].DB_MAX_OUTPUT_PORT_TYPE
+num1_out[3] <= num_1[3].DB_MAX_OUTPUT_PORT_TYPE
+num2_out[0] <= num_2[0].DB_MAX_OUTPUT_PORT_TYPE
+num2_out[1] <= num_2[1].DB_MAX_OUTPUT_PORT_TYPE
+num2_out[2] <= num_2[2].DB_MAX_OUTPUT_PORT_TYPE
+num2_out[3] <= num_2[3].DB_MAX_OUTPUT_PORT_TYPE
+num3_out[0] <= num_3[0].DB_MAX_OUTPUT_PORT_TYPE
+num3_out[1] <= num_3[1].DB_MAX_OUTPUT_PORT_TYPE
+num3_out[2] <= num_3[2].DB_MAX_OUTPUT_PORT_TYPE
+num3_out[3] <= num_3[3].DB_MAX_OUTPUT_PORT_TYPE
+num4_out[0] <= num_4[0].DB_MAX_OUTPUT_PORT_TYPE
+num4_out[1] <= num_4[1].DB_MAX_OUTPUT_PORT_TYPE
+num4_out[2] <= num_4[2].DB_MAX_OUTPUT_PORT_TYPE
+num4_out[3] <= num_4[3].DB_MAX_OUTPUT_PORT_TYPE
+led_out[0] <= led_state[0].DB_MAX_OUTPUT_PORT_TYPE
+led_out[1] <= led_state[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|key_input|debounce_g:inst2
+Key_out <= 16.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 1.CLK
+CLK => 2.CLK
+Key_in => 1.DATAIN
+
+
+|key_input|clk_gen:inst5
+1KHz <= div10_t:inst3.CLK_out
+clock => div10_t:inst.CLK
+100Hz <= div10_t:inst4.CLK_out
+10Hz <= div10_t:inst5.CLK_out
+1Hz <= div10_t:inst6.CLK_out
+
+
+|key_input|clk_gen:inst5|div10_t:inst3
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|key_input|clk_gen:inst5|div10_t:inst2
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|key_input|clk_gen:inst5|div10_t:inst1
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|key_input|clk_gen:inst5|div10_t:inst
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|key_input|clk_gen:inst5|div10_t:inst4
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|key_input|clk_gen:inst5|div10_t:inst5
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|key_input|clk_gen:inst5|div10_t:inst6
+CLK_out <= 2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => 5.CLK
+CLK => 3.CLK
+CLK => 1.CLK
+CLK => 2.CLK
+
+
+|key_input|de_change:inst7
+clk => op[0].CLK
+clk => op[1].CLK
+clk => op[2].CLK
+de[0] <= op[0].DB_MAX_OUTPUT_PORT_TYPE
+de[1] <= op[1].DB_MAX_OUTPUT_PORT_TYPE
+de[2] <= op[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|key_input|led:inst14
+clk => remaining_time[0].CLK
+clk => remaining_time[1].CLK
+clk => remaining_time[2].CLK
+clk => remaining_time[3].CLK
+clk => remaining_time[4].CLK
+clk => remaining_time[5].CLK
+clk => remaining_time[6].CLK
+clk => remaining_time[7].CLK
+clk => remaining_time[8].CLK
+clk => remaining_time[9].CLK
+clk => remaining_time[10].CLK
+clk => remaining_time[11].CLK
+clk => remaining_time[12].CLK
+clk => remaining_time[13].CLK
+clk => remaining_time[14].CLK
+clk => remaining_time[15].CLK
+clk => remaining_time[16].CLK
+clk => remaining_time[17].CLK
+clk => remaining_time[18].CLK
+clk => remaining_time[19].CLK
+clk => remaining_time[20].CLK
+clk => remaining_time[21].CLK
+clk => remaining_time[22].CLK
+clk => remaining_time[23].CLK
+clk => remaining_time[24].CLK
+clk => remaining_time[25].CLK
+clk => remaining_time[26].CLK
+clk => remaining_time[27].CLK
+clk => remaining_time[28].CLK
+clk => remaining_time[29].CLK
+clk => remaining_time[30].CLK
+clk => remaining_time[31].CLK
+clk => op[0].CLK
+clk => op[1].CLK
+clk => op[2].CLK
+clk => op[3].CLK
+clk => op[4].CLK
+clk => op[5].CLK
+clk => op[6].CLK
+clk => op[7].CLK
+clk => op[8].CLK
+clk => op[9].CLK
+clk => op[10].CLK
+clk => op[11].CLK
+state[0] => Mux0.IN3
+state[0] => Mux1.IN3
+state[0] => Mux2.IN3
+state[0] => Mux3.IN3
+state[0] => Mux4.IN3
+state[0] => Mux5.IN3
+state[0] => Mux6.IN3
+state[0] => Mux7.IN3
+state[0] => Mux8.IN3
+state[0] => Mux9.IN3
+state[0] => Mux10.IN3
+state[0] => Mux11.IN3
+state[0] => remaining_time[12].ENA
+state[0] => remaining_time[11].ENA
+state[0] => remaining_time[10].ENA
+state[0] => remaining_time[9].ENA
+state[0] => remaining_time[8].ENA
+state[0] => remaining_time[7].ENA
+state[0] => remaining_time[6].ENA
+state[0] => remaining_time[5].ENA
+state[0] => remaining_time[4].ENA
+state[0] => remaining_time[3].ENA
+state[0] => remaining_time[2].ENA
+state[0] => remaining_time[1].ENA
+state[0] => remaining_time[0].ENA
+state[0] => remaining_time[13].ENA
+state[0] => remaining_time[14].ENA
+state[0] => remaining_time[15].ENA
+state[0] => remaining_time[16].ENA
+state[0] => remaining_time[17].ENA
+state[0] => remaining_time[18].ENA
+state[0] => remaining_time[19].ENA
+state[0] => remaining_time[20].ENA
+state[0] => remaining_time[21].ENA
+state[0] => remaining_time[22].ENA
+state[0] => remaining_time[23].ENA
+state[0] => remaining_time[24].ENA
+state[0] => remaining_time[25].ENA
+state[0] => remaining_time[26].ENA
+state[0] => remaining_time[27].ENA
+state[0] => remaining_time[28].ENA
+state[0] => remaining_time[29].ENA
+state[0] => remaining_time[30].ENA
+state[0] => remaining_time[31].ENA
+state[1] => Mux0.IN2
+state[1] => Mux1.IN2
+state[1] => Mux2.IN2
+state[1] => Mux3.IN2
+state[1] => Mux4.IN2
+state[1] => Mux5.IN2
+state[1] => Mux6.IN2
+state[1] => Mux7.IN2
+state[1] => Mux8.IN2
+state[1] => Mux9.IN2
+state[1] => Mux10.IN2
+state[1] => Mux11.IN2
+z[0] <= op[0].DB_MAX_OUTPUT_PORT_TYPE
+z[1] <= op[1].DB_MAX_OUTPUT_PORT_TYPE
+z[2] <= op[2].DB_MAX_OUTPUT_PORT_TYPE
+z[3] <= op[3].DB_MAX_OUTPUT_PORT_TYPE
+z[4] <= op[4].DB_MAX_OUTPUT_PORT_TYPE
+z[5] <= op[5].DB_MAX_OUTPUT_PORT_TYPE
+z[6] <= op[6].DB_MAX_OUTPUT_PORT_TYPE
+z[7] <= op[7].DB_MAX_OUTPUT_PORT_TYPE
+z[8] <= op[8].DB_MAX_OUTPUT_PORT_TYPE
+z[9] <= op[9].DB_MAX_OUTPUT_PORT_TYPE
+z[10] <= op[10].DB_MAX_OUTPUT_PORT_TYPE
+z[11] <= op[11].DB_MAX_OUTPUT_PORT_TYPE
+
+
