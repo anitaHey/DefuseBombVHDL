@@ -15,7 +15,7 @@ entity control_unit is
 		num4_out : out std_logic_vector(3 downto 0);
 		
 		led_out  : out integer range 0 to 2;
-		timer_running : out std_logic
+		timer_reset_out : out std_logic
 	);
 end control_unit;
 
@@ -68,12 +68,14 @@ begin
 				when GAME_READY =>
 					game_state <= GAME_INPUT_ANS;
 					led_state <= LED_FLASHING;
+					timer_reset_out <= '1';
 					num_current <= 1;
 					
 				when GAME_INPUT_ANS =>
 					if (num_current >= 5) then
 						game_state <= GAME_GUESSING;
 						led_state <= LED_COUNTDOWN;
+						timer_reset_out <= '0';
 						num_current <= 1;
 						-- Save num_ans
 						num_1_v := num_1;
@@ -86,7 +88,11 @@ begin
 					end if;
 					
 				when GAME_GUESSING =>
-					if (num_current >= 5) then
+					-- If time is up, then transit to GAME_LOSE.
+					if (has_remaining_time = '0') then
+						game_state <= GAME_LOSE;
+						
+					elsif (num_current >= 5) then
 						num_1_v := num_1;
 						num_2_v := num_2;
 						num_3_v := num_3;
@@ -94,6 +100,7 @@ begin
 						
 						if (num_1_v & num_2_v & num_3_v & num_4_v = num_ans) then
 							game_state <= GAME_WIN;
+							
 						else
 							game_state <= GAME_SHOW_HINT;
 							num_current <= 0;
@@ -113,6 +120,7 @@ begin
 						end if;
 						
 					else
+						null;
 						num_current <= num_current + 1;
 					end if;
 					
@@ -135,12 +143,18 @@ begin
 				when others => null;
 			end case;
 			
-			
-			-- If time is up, then transit to GMAE_LOSE.
-			--if (has_remaining_time = '0') then
-			--	game_state <= GAME_LOSE;
-			--end if;
-			
+		end if;
+		
+		
+		-- Only the god and I knows why this section is needed
+		-- when I wrote this code.
+		-- .
+		-- .
+		-- .
+		-- Now, only the god knows.
+		-- 
+		if (game_state = GAME_WIN) then
+			led_state <= LED_STOPPED;
 		end if;
 		
 		
@@ -172,10 +186,5 @@ begin
 	num2_out <= num_2;
 	num3_out <= num_3;
 	num4_out <= num_4;
-	led_out <= led_state;
-	
-	-- timer_running is set to `true` when led is in countdown state.
-	with led_state select
-	timer_running <=  '1' when LED_COUNTDOWN,
-							'0' when others;
+	led_out  <= led_state;
 end Behavioral;

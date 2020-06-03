@@ -1,5 +1,5 @@
 Analysis & Synthesis report for key_input
-Mon Jun 01 19:42:14 2020
+Wed Jun 03 15:29:15 2020
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -46,14 +46,14 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jun 01 19:42:14 2020      ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun 03 15:29:15 2020      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; key_input                                  ;
 ; Top-level Entity Name           ; key_input                                  ;
 ; Family                          ; Cyclone V                                  ;
 ; Logic utilization (in ALMs)     ; N/A                                        ;
-; Total registers                 ; 136                                        ;
-; Total pins                      ; 29                                         ;
+; Total registers                 ; 147                                        ;
+; Total pins                      ; 53                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0                                          ;
 ; Total DSP Blocks                ; 0                                          ;
@@ -179,11 +179,13 @@ applicable agreement for further details.
 ; control_unit.vhd                 ; yes             ; User VHDL File                           ; C:/altera/13.1/DefuseBombVHDL/src/control_unit.vhd ;         ;
 ; led.vhd                          ; yes             ; User VHDL File                           ; C:/altera/13.1/DefuseBombVHDL/src/led.vhd          ;         ;
 ; timer.vhd                        ; yes             ; User VHDL File                           ; C:/altera/13.1/DefuseBombVHDL/src/timer.vhd        ;         ;
+; row_scanner.vhd                  ; yes             ; User VHDL File                           ; C:/altera/13.1/DefuseBombVHDL/src/row_scanner.vhd  ;         ;
 ; seg7.vhd                         ; yes             ; Auto-Found VHDL File                     ; C:/altera/13.1/DefuseBombVHDL/src/seg7.vhd         ;         ;
 ; debounce_g.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/altera/13.1/DefuseBombVHDL/src/debounce_g.bdf   ;         ;
 ; clk_gen.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/altera/13.1/DefuseBombVHDL/src/clk_gen.bdf      ;         ;
 ; div10_t.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/altera/13.1/DefuseBombVHDL/src/div10_t.bdf      ;         ;
 ; de_change.vhd                    ; yes             ; Auto-Found VHDL File                     ; C:/altera/13.1/DefuseBombVHDL/src/de_change.vhd    ;         ;
+; dot_display.vhd                  ; yes             ; Auto-Found VHDL File                     ; C:/altera/13.1/DefuseBombVHDL/src/dot_display.vhd  ;         ;
 +----------------------------------+-----------------+------------------------------------------+----------------------------------------------------+---------+
 
 
@@ -192,23 +194,23 @@ applicable agreement for further details.
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Estimate of Logic utilization (ALMs needed) ; 165                   ;
+; Estimate of Logic utilization (ALMs needed) ; 247                   ;
 ;                                             ;                       ;
-; Combinational ALUT usage for logic          ; 267                   ;
+; Combinational ALUT usage for logic          ; 385                   ;
 ;     -- 7 input functions                    ; 1                     ;
-;     -- 6 input functions                    ; 60                    ;
-;     -- 5 input functions                    ; 38                    ;
-;     -- 4 input functions                    ; 36                    ;
-;     -- <=3 input functions                  ; 132                   ;
+;     -- 6 input functions                    ; 106                   ;
+;     -- 5 input functions                    ; 65                    ;
+;     -- 4 input functions                    ; 59                    ;
+;     -- <=3 input functions                  ; 154                   ;
 ;                                             ;                       ;
-; Dedicated logic registers                   ; 136                   ;
+; Dedicated logic registers                   ; 147                   ;
 ;                                             ;                       ;
-; I/O pins                                    ; 29                    ;
+; I/O pins                                    ; 53                    ;
 ; Total DSP Blocks                            ; 0                     ;
 ; Maximum fan-out node                        ; debounce_g:inst2|16~1 ;
-; Maximum fan-out                             ; 60                    ;
-; Total fan-out                               ; 1490                  ;
-; Average fan-out                             ; 3.23                  ;
+; Maximum fan-out                             ; 62                    ;
+; Total fan-out                               ; 2126                  ;
+; Average fan-out                             ; 3.33                  ;
 +---------------------------------------------+-----------------------+
 
 
@@ -217,7 +219,7 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Library Name ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------+--------------+
-; |key_input                 ; 267 (0)           ; 136 (0)      ; 0                 ; 0          ; 29   ; 0            ; |key_input                             ; work         ;
+; |key_input                 ; 385 (0)           ; 147 (0)      ; 0                 ; 0          ; 53   ; 0            ; |key_input                             ; work         ;
 ;    |clk_gen:inst5|         ; 27 (0)            ; 27 (0)       ; 0                 ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5               ; work         ;
 ;       |div10_t:inst1|      ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst1 ; work         ;
 ;       |div10_t:inst2|      ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst2 ; work         ;
@@ -226,39 +228,41 @@ applicable agreement for further details.
 ;       |div10_t:inst5|      ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst5 ; work         ;
 ;       |div10_t:inst6|      ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst6 ; work         ;
 ;       |div10_t:inst|       ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |key_input|clk_gen:inst5|div10_t:inst  ; work         ;
-;    |control_unit:inst11|   ; 134 (134)         ; 60 (60)      ; 0                 ; 0          ; 0    ; 0            ; |key_input|control_unit:inst11         ; work         ;
+;    |control_unit:inst3|    ; 139 (139)         ; 62 (62)      ; 0                 ; 0          ; 0    ; 0            ; |key_input|control_unit:inst3          ; work         ;
 ;    |de_change:inst7|       ; 2 (2)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |key_input|de_change:inst7             ; work         ;
 ;    |debounce_g:inst2|      ; 1 (1)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |key_input|debounce_g:inst2            ; work         ;
-;    |led:inst9|             ; 53 (53)           ; 12 (12)      ; 0                 ; 0          ; 0    ; 0            ; |key_input|led:inst9                   ; work         ;
+;    |dot_display:inst12|    ; 108 (108)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |key_input|dot_display:inst12          ; work         ;
+;    |led:inst9|             ; 57 (57)           ; 13 (13)      ; 0                 ; 0          ; 0    ; 0            ; |key_input|led:inst9                   ; work         ;
+;    |row_scanner:inst6|     ; 2 (2)             ; 8 (8)        ; 0                 ; 0          ; 0    ; 0            ; |key_input|row_scanner:inst6           ; work         ;
 ;    |seg7:inst|             ; 11 (11)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |key_input|seg7:inst                   ; work         ;
-;    |timer:inst8|           ; 39 (39)           ; 33 (33)      ; 0                 ; 0          ; 0    ; 0            ; |key_input|timer:inst8                 ; work         ;
+;    |timer:inst1|           ; 38 (38)           ; 33 (33)      ; 0                 ; 0          ; 0    ; 0            ; |key_input|timer:inst1                 ; work         ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                         ;
-+-----------------------------------------------------+------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
-+-----------------------------------------------------+------------------------------+------------------------+
-; control_unit:inst11|num_1[0]                        ; control_unit:inst11|num_1[3] ; yes                    ;
-; control_unit:inst11|num_3[0]                        ; control_unit:inst11|num_3[3] ; yes                    ;
-; control_unit:inst11|num_2[0]                        ; control_unit:inst11|Equal25  ; yes                    ;
-; control_unit:inst11|num_4[0]                        ; control_unit:inst11|Equal27  ; yes                    ;
-; control_unit:inst11|num_1[1]                        ; control_unit:inst11|num_1[3] ; yes                    ;
-; control_unit:inst11|num_3[1]                        ; control_unit:inst11|num_3[3] ; yes                    ;
-; control_unit:inst11|num_2[1]                        ; control_unit:inst11|Equal25  ; yes                    ;
-; control_unit:inst11|num_4[1]                        ; control_unit:inst11|Equal27  ; yes                    ;
-; control_unit:inst11|num_1[2]                        ; control_unit:inst11|num_1[3] ; yes                    ;
-; control_unit:inst11|num_3[2]                        ; control_unit:inst11|num_3[3] ; yes                    ;
-; control_unit:inst11|num_2[2]                        ; control_unit:inst11|Equal25  ; yes                    ;
-; control_unit:inst11|num_4[2]                        ; control_unit:inst11|Equal27  ; yes                    ;
-; control_unit:inst11|num_1[3]                        ; control_unit:inst11|num_1[3] ; yes                    ;
-; control_unit:inst11|num_3[3]                        ; control_unit:inst11|num_3[3] ; yes                    ;
-; control_unit:inst11|num_2[3]                        ; control_unit:inst11|Equal25  ; yes                    ;
-; control_unit:inst11|num_4[3]                        ; control_unit:inst11|Equal27  ; yes                    ;
-; Number of user-specified and inferred latches = 16  ;                              ;                        ;
-+-----------------------------------------------------+------------------------------+------------------------+
++------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                        ;
++-----------------------------------------------------+-----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal         ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------+------------------------+
+; control_unit:inst3|num_1[0]                         ; control_unit:inst3|num_1[3] ; yes                    ;
+; control_unit:inst3|num_3[0]                         ; control_unit:inst3|num_3[3] ; yes                    ;
+; control_unit:inst3|num_2[0]                         ; control_unit:inst3|Equal26  ; yes                    ;
+; control_unit:inst3|num_4[0]                         ; control_unit:inst3|Equal28  ; yes                    ;
+; control_unit:inst3|num_1[1]                         ; control_unit:inst3|num_1[3] ; yes                    ;
+; control_unit:inst3|num_3[1]                         ; control_unit:inst3|num_3[3] ; yes                    ;
+; control_unit:inst3|num_2[1]                         ; control_unit:inst3|Equal26  ; yes                    ;
+; control_unit:inst3|num_4[1]                         ; control_unit:inst3|Equal28  ; yes                    ;
+; control_unit:inst3|num_1[2]                         ; control_unit:inst3|num_1[3] ; yes                    ;
+; control_unit:inst3|num_3[2]                         ; control_unit:inst3|num_3[3] ; yes                    ;
+; control_unit:inst3|num_2[2]                         ; control_unit:inst3|Equal26  ; yes                    ;
+; control_unit:inst3|num_4[2]                         ; control_unit:inst3|Equal28  ; yes                    ;
+; control_unit:inst3|num_1[3]                         ; control_unit:inst3|num_1[3] ; yes                    ;
+; control_unit:inst3|num_3[3]                         ; control_unit:inst3|num_3[3] ; yes                    ;
+; control_unit:inst3|num_2[3]                         ; control_unit:inst3|Equal26  ; yes                    ;
+; control_unit:inst3|num_4[3]                         ; control_unit:inst3|Equal28  ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                             ;                        ;
++-----------------------------------------------------+-----------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -273,19 +277,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                           ;
-+---------------------------------------------+------------------------------------------------+
-; Register name                               ; Reason for Removal                             ;
-+---------------------------------------------+------------------------------------------------+
-; de_change:inst7|op[0]                       ; Stuck at GND due to stuck port data_in         ;
-; control_unit:inst11|led_state[1..9,11..31]  ; Merged with control_unit:inst11|led_state[10]  ;
-; control_unit:inst11|game_state[3..9,11..31] ; Merged with control_unit:inst11|game_state[10] ;
-; clk_gen:inst5|div10_t:inst4|5               ; Merged with de_change:inst7|op[2]              ;
-; control_unit:inst11|led_state[10]           ; Stuck at GND due to stuck port data_in         ;
-; control_unit:inst11|game_state[10]          ; Stuck at GND due to stuck port data_in         ;
-; Total Number of Removed Registers = 62      ;                                                ;
-+---------------------------------------------+------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                         ;
++--------------------------------------------+-----------------------------------------------+
+; Register name                              ; Reason for Removal                            ;
++--------------------------------------------+-----------------------------------------------+
+; de_change:inst7|op[0]                      ; Stuck at GND due to stuck port data_in        ;
+; control_unit:inst3|game_state[3..9,11..31] ; Merged with control_unit:inst3|game_state[10] ;
+; clk_gen:inst5|div10_t:inst4|5              ; Merged with de_change:inst7|op[2]             ;
+; control_unit:inst3|game_state[10]          ; Stuck at GND due to stuck port data_in        ;
+; Total Number of Removed Registers = 31     ;                                               ;
++--------------------------------------------+-----------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -293,12 +295,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 136   ;
-; Number of registers using Synchronous Clear  ; 60    ;
-; Number of registers using Synchronous Load   ; 13    ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 147   ;
+; Number of registers using Synchronous Clear  ; 70    ;
+; Number of registers using Synchronous Load   ; 11    ;
+; Number of registers using Asynchronous Clear ; 2     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 93    ;
+; Number of registers using Clock Enable       ; 98    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -309,27 +311,29 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; led:inst9|op[0]                        ; 3       ;
-; timer:inst8|remaining_time_sig[6]      ; 9       ;
-; timer:inst8|remaining_time_sig[3]      ; 13      ;
-; timer:inst8|remaining_time_sig[5]      ; 12      ;
-; timer:inst8|remaining_time_sig[4]      ; 12      ;
-; Total number of inverted registers = 5 ;         ;
+; row_scanner:inst6|op[6]                ; 5       ;
+; control_unit:inst3|led_state[1]        ; 21      ;
+; timer:inst1|remaining_time_sig[6]      ; 32      ;
+; timer:inst1|remaining_time_sig[3]      ; 30      ;
+; timer:inst1|remaining_time_sig[4]      ; 29      ;
+; timer:inst1|remaining_time_sig[5]      ; 29      ;
+; Total number of inverted registers = 7 ;         ;
 +----------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 28 bits   ; 56 LEs        ; 0 LEs                ; 56 LEs                 ; Yes        ; |key_input|timer:inst8|remaining_time_sig[13]  ;
-; 7:1                ; 31 bits   ; 124 LEs       ; 0 LEs                ; 124 LEs                ; Yes        ; |key_input|control_unit:inst11|num_current[14] ;
-; 16:1               ; 11 bits   ; 110 LEs       ; 88 LEs               ; 22 LEs                 ; Yes        ; |key_input|led:inst9|op[9]                     ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |key_input|timer:inst8|remaining_time_sig[4]   ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |key_input|seg7:inst|Mux9                      ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |key_input|control_unit:inst11|hint_a          ;
-; 15:1               ; 4 bits    ; 40 LEs        ; 4 LEs                ; 36 LEs                 ; No         ; |key_input|control_unit:inst11|hint_b          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 28 bits   ; 56 LEs        ; 0 LEs                ; 56 LEs                 ; Yes        ; |key_input|timer:inst1|remaining_time_sig[12] ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 0 LEs                ; 155 LEs                ; Yes        ; |key_input|control_unit:inst3|num_current[16] ;
+; 18:1               ; 11 bits   ; 132 LEs       ; 88 LEs               ; 44 LEs                 ; Yes        ; |key_input|led:inst9|op[9]                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |key_input|timer:inst1|remaining_time_sig[6]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |key_input|seg7:inst|Mux7                     ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; No         ; |key_input|control_unit:inst3|hint_a          ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 4 LEs                ; 36 LEs                 ; No         ; |key_input|control_unit:inst3|hint_b          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
 +-------------------------------+
@@ -347,7 +351,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 01 19:42:12 2020
+    Info: Processing started: Wed Jun 03 15:29:11 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off key_input -c key_input
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file key_input.bdf
@@ -367,6 +371,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file led.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
     Info (12022): Found design unit 1: timer-behavioral
     Info (12023): Found entity 1: timer
+Info (12021): Found 2 design units, including 1 entities, in source file row_scanner.vhd
+    Info (12022): Found design unit 1: row_scanner-behavioral
+    Info (12023): Found entity 1: row_scanner
 Info (12127): Elaborating entity "key_input" for the top level hierarchy
 Warning (12125): Using design file seg7.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: seg7-Behavioral
@@ -381,15 +388,16 @@ Info (10041): Inferred latch for "op[0]" at seg7.vhd(17)
 Info (10041): Inferred latch for "op[1]" at seg7.vhd(17)
 Info (10041): Inferred latch for "op[2]" at seg7.vhd(17)
 Info (10041): Inferred latch for "op[3]" at seg7.vhd(17)
-Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst11"
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(148): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(149): signal "hint_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(151): signal "hint_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(154): signal "num_current" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(156): signal "sw_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(158): signal "sw_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(160): signal "sw_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(162): signal "sw_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst3"
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(156): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(162): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(163): signal "hint_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(165): signal "hint_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(168): signal "num_current" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(170): signal "sw_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(172): signal "sw_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(174): signal "sw_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(176): signal "sw_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10631): VHDL Process Statement warning at control_unit.vhd(56): inferring latch(es) for signal or variable "num_1", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at control_unit.vhd(56): inferring latch(es) for signal or variable "num_2", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at control_unit.vhd(56): inferring latch(es) for signal or variable "num_3", which holds its previous value in one or more paths through the process
@@ -419,46 +427,58 @@ Info (12128): Elaborating entity "clk_gen" for hierarchy "clk_gen:inst5"
 Warning (12125): Using design file div10_t.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: div10_t
 Info (12128): Elaborating entity "div10_t" for hierarchy "clk_gen:inst5|div10_t:inst3"
-Info (12128): Elaborating entity "timer" for hierarchy "timer:inst8"
+Info (12128): Elaborating entity "timer" for hierarchy "timer:inst1"
 Warning (12125): Using design file de_change.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: de_change-a
     Info (12023): Found entity 1: de_change
 Info (12128): Elaborating entity "de_change" for hierarchy "de_change:inst7"
 Info (12128): Elaborating entity "led" for hierarchy "led:inst9"
+Warning (12125): Using design file dot_display.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: dot_display-behavioral
+    Info (12023): Found entity 1: dot_display
+Info (12128): Elaborating entity "dot_display" for hierarchy "dot_display:inst12"
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(32): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(3638): signal "g_display" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(3638): signal "row_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(3639): signal "r_display" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(3639): signal "row_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "row_scanner" for hierarchy "row_scanner:inst6"
 Warning (14026): LATCH primitive "seg7:inst|op[3]" is permanently enabled
 Warning (14026): LATCH primitive "seg7:inst|op[2]" is permanently enabled
 Warning (14026): LATCH primitive "seg7:inst|op[1]" is permanently enabled
 Warning (14026): LATCH primitive "seg7:inst|op[0]" is permanently enabled
-Warning (13012): Latch control_unit:inst11|num_1[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst11|game_state[0]
-Warning (13012): Latch control_unit:inst11|num_3[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst11|game_state[0]
-Warning (13012): Latch control_unit:inst11|num_1[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst11|game_state[0]
-Warning (13012): Latch control_unit:inst11|num_3[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst11|game_state[0]
-Warning (13012): Latch control_unit:inst11|num_1[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst11|game_state[0]
-Warning (13012): Latch control_unit:inst11|num_3[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst11|game_state[0]
-Warning (13012): Latch control_unit:inst11|num_1[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst11|game_state[0]
-Warning (13012): Latch control_unit:inst11|num_3[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst11|game_state[0]
+Warning (13012): Latch control_unit:inst3|num_1[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst3|game_state[0]
+Warning (13012): Latch control_unit:inst3|num_3[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst3|game_state[0]
+Warning (13012): Latch control_unit:inst3|num_1[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst3|game_state[0]
+Warning (13012): Latch control_unit:inst3|num_3[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst3|game_state[0]
+Warning (13012): Latch control_unit:inst3|num_1[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst3|game_state[0]
+Warning (13012): Latch control_unit:inst3|num_3[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst3|game_state[0]
+Warning (13012): Latch control_unit:inst3|num_1[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst3|game_state[0]
+Warning (13012): Latch control_unit:inst3|num_3[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control_unit:inst3|game_state[0]
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "de_out3" is stuck at GND
     Warning (13410): Pin "com_N20" is stuck at VCC
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register control_unit:inst3|led_state[1] will power up to High
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 315 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 464 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 23 output pins
-    Info (21061): Implemented 286 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 630 megabytes
-    Info: Processing ended: Mon Jun 01 19:42:14 2020
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:03
+    Info (21059): Implemented 47 output pins
+    Info (21061): Implemented 411 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 57 warnings
+    Info: Peak virtual memory: 623 megabytes
+    Info: Processing ended: Wed Jun 03 15:29:15 2020
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

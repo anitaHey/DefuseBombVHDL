@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity led is
 	port (
-		state          : in integer range 0 to 2;  -- 0 = Flash (Ready); 1 = Countdown (In-game); 2 = Stopped (Win/Lose)
+		state          : in integer range 0 to 3;  -- 0 = Flash (Ready); 1 = Countdown (In-game); 2 = Stopped (Win/Lose)
 		remaining_time : in integer;
 		clk            : in std_logic;
 		z              : out std_logic_vector(11 downto 0) -- There are 12 LEDs
@@ -17,17 +17,25 @@ architecture behavioral of led is
 constant LED_FLASHING  : integer := 0;
 constant LED_COUNTDOWN : integer := 1;
 constant LED_STOPPED   : integer := 2;
+constant LED_RESET     : integer := 3;
 -- LED Output signal
 signal op : std_logic_vector(11 downto 0) := "000000000001";
+signal reset : std_logic := '0';
 begin
 	process(clk)
 	begin
 		if (rising_edge(clk)) then
 			case state is
 				when LED_FLASHING  =>
-					op <= op(0) & op(11 downto 1);  -- Rotates right `op` by one bit.
+					if (reset = '0') then
+						reset <= '1';
+						op <= "000000000001";
+					else
+						op <= op(0) & op(11 downto 1);  -- Rotates right `op` by one bit.
+					end if;
 				
 				when LED_COUNTDOWN =>
+					reset <= '0';
 					-- Update led output if needed.
 					if    (remaining_time >= 120) then op <= "111111111111";
 					elsif (remaining_time >= 110) then op <= "111111111110";
@@ -45,9 +53,11 @@ begin
 					else                   null;
 					end if;
 					
-				when LED_STOPPED   => null;
+				when LED_STOPPED =>
+					null;
 				
-				when others        => null;
+				when others =>
+					null;
 				
 			end case;
 		end if;

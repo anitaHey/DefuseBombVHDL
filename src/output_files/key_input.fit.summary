@@ -1,13 +1,13 @@
-Fitter Status : Successful - Mon Jun 01 19:42:44 2020
+Fitter Status : Successful - Wed Jun 03 15:29:47 2020
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : key_input
 Top-level Entity Name : key_input
 Family : Cyclone V
 Device : 5CEFA2F23C8
 Timing Models : Final
-Logic utilization (in ALMs) : 175 / 9,430 ( 2 % )
-Total registers : 139
-Total pins : 29 / 224 ( 13 % )
+Logic utilization (in ALMs) : 262 / 9,430 ( 3 % )
+Total registers : 155
+Total pins : 53 / 224 ( 24 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 1,802,240 ( 0 % )
 Total DSP Blocks : 0 / 25 ( 0 % )
