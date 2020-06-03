@@ -20,8 +20,8 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 224 96)
-	(text "timer" (rect 5 0 25 12)(font "Arial" ))
+	(rect 16 16 160 96)
+	(text "row_scanner" (rect 5 0 56 12)(font "Arial" ))
 	(text "inst" (rect 8 64 20 76)(font "Arial" ))
 	(port
 		(pt 0 32)
@@ -31,27 +31,13 @@ applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32)(line_width 1))
 	)
 	(port
-		(pt 0 48)
-		(input)
-		(text "reset" (rect 0 0 20 12)(font "Arial" ))
-		(text "reset" (rect 21 43 41 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 208 32)
+		(pt 144 32)
 		(output)
-		(text "has_remaining_time" (rect 0 0 80 12)(font "Arial" ))
-		(text "has_remaining_time" (rect 107 27 187 39)(font "Arial" ))
-		(line (pt 208 32)(pt 192 32)(line_width 1))
-	)
-	(port
-		(pt 208 48)
-		(output)
-		(text "remaining_time[31..0]" (rect 0 0 83 12)(font "Arial" ))
-		(text "remaining_time[31..0]" (rect 104 43 187 55)(font "Arial" ))
-		(line (pt 208 48)(pt 192 48)(line_width 3))
+		(text "row[7..0]" (rect 0 0 34 12)(font "Arial" ))
+		(text "row[7..0]" (rect 89 27 123 39)(font "Arial" ))
+		(line (pt 144 32)(pt 128 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 192 64)(line_width 1))
+		(rectangle (rect 16 16 128 64)(line_width 1))
 	)
 )

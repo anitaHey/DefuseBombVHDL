@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity timer is
 	port (
 		clk                : in std_logic;  -- Must be 1Hz
-		running            : in std_logic;
+		reset              : in std_logic;
 		has_remaining_time : out std_logic;
 		remaining_time     : out integer
 	);
@@ -20,7 +20,7 @@ begin
 	begin
 		if (rising_edge(clk)) then
 		
-			if (running = '1') then
+			if (reset = '0') then
 				-- Update remaining time.
 				if (remaining_time_sig > 0) then
 					remaining_time_sig <= remaining_time_sig - 1;
