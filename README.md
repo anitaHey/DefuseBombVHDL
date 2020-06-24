@@ -1,6 +1,6 @@
 <div align="center">
 <h3>DEFUSE BOMB (VHDL)</h3>
-<img src="https://github.com/anitaHey/DefuseBombVHDL/raw/master/.meta/scrot.jpg">
+<img src="https://github.com/anitaHey/DefuseBombVHDL/raw/master/.meta/cover.jpg">
 
 </div>
 
@@ -10,7 +10,7 @@ Bulls and Cows game (also known as 1A2B game) implemented in VHDL.
 This is the semester project for Digital System Lab (Spring 2020) in UTaipei using CPLD/FPGA (LP-2900) board.
 
 ## Schematic Diagram
-![schematic](https://github.com/anitaHey/DefuseBombVHDL/raw/master/.meta/schematic.png")
+![schematic](https://github.com/anitaHey/DefuseBombVHDL/raw/master/.meta/schematic.png)
 
 ## Features
 * Player 1 can enter the answer (a four-digit passcode) at the beginning
