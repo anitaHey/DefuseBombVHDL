@@ -1,5 +1,3 @@
-# DefuseBombVHDL
-
 <div align="center">
 <h3>DEFUSE BOMB (VHDL)</h3>
 <img src="https://github.com/anitaHey/DefuseBombVHDL/raw/master/.meta/scrot.jpg">
